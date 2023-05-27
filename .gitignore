@@ -1,3 +1,7 @@
+# Data folders with too big files, these files need to be stored on external cloud location.
+data/bdl
+figures
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
