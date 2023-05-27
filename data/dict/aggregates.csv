@@ -1,0 +1,9 @@
+id,name,level,description
+1,OGÓŁEM,7,"Agregaty dla cech zasilanych na poziomie: <br />- miejscowości statystycznej - suma danych dla miejscowości statystycznych na poziom gminy, powiatu, podregionu, regionu, województwa, makroregionu i Polski, <br />- gminy - suma danych dla gmin o rodzaju 1, 2, 3 (lub suma rodzaj jednostki = 4 i rodzaj jednostki = 5) na poziom powiatu, podregionu, regionu, województwa, makroregionu i Polski, <br />- powiatu - suma danych dla powiatów na poziom podregionu, regionu, województwa, makroregionu i Polski, <br />- podregionu - suma danych dla podregionów na poziom regionu, województwa, makroregionu i Polski, <br />- województwa/regionu - suma danych dla regionów na poziom województwa, makroregionu i Polski, <br />- makroregionu - suma danych dla makroregionów na poziom Polski. <br />"
+2,GMINY MIEJSKIE,5,Suma danych dla gmin miejskich (rodzaj jednostki = 1 )
+3,GMINY MIEJSKO-WIEJSKIE,5,Suma danych dla gmin miejsko-wiejskich (rodzaj jednostki = 3 lub suma rodzaj jednostki = 4 i rodzaj jednostki = 5)
+4,GMINY WIEJSKIE,5,Suma danych dla gmin wiejskich (rodzaj jednostki = 2)
+7,MIASTO,5,"Suma danych dla miast, czyli gmin miejskich (rodzaj jednostki = 1 ) i miast w gminach miejsko-wiejskich (rodzaj jednostki = 4)"
+8,WIEŚ,5,"Suma danych dla wsi, czyli gmin wiejskich (rodzaj jednostki = 2) i obszarów wiejskich w gminach miejsko-wiejskich (rodzaj jednostki = 5)"
+91,Górnośląsko-Zagłębiowska Metropolia,3,
+92,Metropolia Krakowska,3,

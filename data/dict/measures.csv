@@ -1,0 +1,72 @@
+id,name,description
+1,-,brak
+2,tys. l,tysiąc litrów
+3,tys. szt.,tysiąc sztuk
+4,zł,złoty
+5,tys. zł,tysiąc złotych
+6,mln zł,milion złotych
+7,kg,kilogram
+8,szt.,sztuka
+9,szt.,"sztuka (pomnik przyrody, rezerwat)"
+10,szt.,sztuka (pogłowie zwierząt)
+11,tys. szt.,tysiąc sztuk (pogłowie zwierząt)
+12,dt,decytona
+13,t,tona
+14,m,metr
+15,km,kilometr
+16,m2,metr kwadratowy
+17,ha,hektar
+18,m3,metr sześcienny
+19,dam3,dekametr sześcienny
+20,GWh,gigawatogodzina
+21,MWh,megawatogodzina
+22,MW,megawat
+23,tys. osób,tysiąc osób
+24,etat,etat
+26,osoba,osoba
+28,dam3/rok,dekametr sześcienny na rok
+32,tys. m3,tysiąc metrów sześciennych
+33,msc.,miejsce (noclegowe)
+35,ob.,obiekt (zakład)
+37,gosp.,gospodarstwo domowe
+42,osoba/dz.,osobodzień
+43,wol.,wolumin
+46,m3/dobę,metr sześcienny na dobę
+50,%,procent
+51,t/r,tona na rok
+52,tys. t,tysiąc ton
+55,km2,kilometr kwadratowy
+60,hm3,hektometr sześcienny
+61,os.zagroż.,osobozagrożenie
+62,tys. m2,tysiąc metrów kwadratowych
+63,GJ,gigadżul
+64,msc.,miejsce np. w przedszkolu
+65,msc.,miejsce do siedzenia
+66,ar,ar
+67,km3,kilometr sześcienny
+68,cm3,centymetr sześcienny
+69,Gg,gigagram
+71,l,litr
+72, --,nieokreślona
+74,kWh,kilowatogodzina
+75,EPC,ekwiwalent pełnego czasu pracy
+78,tys. EUR,tysiąc euro
+79,AWU,roczna jednostka pracy
+80,lata,liczba lat
+82,kg/rok,kilogram na rok
+83,tys. ha,tysiąc hektarów
+85,promil,promil
+86,mc,miesiąc
+87,pp,punkt procentowy
+88,tys. msc.,tysiąc miejsc
+93,MJ,megadżul
+94,GJ/dam3,gigadżul na dekametr sześcienny
+98,zł/t,złoty na tonę
+100,dam3/h,dekametr sześcienny na godzinę
+102,zł/m2,złoty na metr kwadratowy
+103,mld zł,miliard złotych
+104,tys. gosp.,tysiąc gospodarstw domowych
+105,tys. msc.,tysiąc miejsc do siedzenia
+106,tys. AWU,tysiąc rocznych jednostek pracy
+108,rok,rok
+109,gosp.,gospodarstwo rolne

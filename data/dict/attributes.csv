@@ -1,0 +1,17 @@
+id,name,symbol,description
+0,0, ,
+1,wartość, ,
+3,wartość,k,Agregat może być niekompletny
+4,. lub 0,x,"Brak informacji, konieczność zachowania tajemnicy statystycznej lub wypełnienie pozycji jest niemożliwe albo niecelowe"
+7,0,a,Wartość mniejsza niż przyjęty format prezentacji
+9,wartość,s,Szacunki wstępne
+11,wartość,M,Zmiany metodologiczne
+13,wartość,K,"Zmiany metodologiczne, agregat może być niekompletny"
+14,. lub 0,X,"Zmiany metodologiczne, brak informacji, konieczność zachowania tajemnicy statystycznej lub wypełnienie pozycji jest niemożliwe albo niecelowe"
+15,-, ,"Znak '-' oznacza brak informacji z powodu: zmiany poziomu prezentacji, zmian wprowadzonych do wykazu jednostek terytorialnych lub modyfikacji listy cech w danym okresie sprawozdawczym"
+17,0,A,"Zmiany metodologiczne, wartość mniejsza niż przyjęty format prezentacji"
+50,- lub 0,n,"Dana jeszcze niedostępna, będzie dostępna"
+91,. lub 0,x,"Brak informacji, konieczność zachowania tajemnicy statystycznej lub wypełnienie pozycji jest niemożliwe albo niecelowe"
+94,0,z,"Wartość znacząca, wartość zerowa wynika z bilansu niezerowych danych wejściowych algorytmu, np. przyrost naturalny, jeśli liczba zgonów jest równa liczbie urodzeń"
+97,wartość,p,Łącznie dla powiatu i miasta na prawach powiatu
+98,0,Z,"Zmiany metodologiczne, wartość znacząca, wartość zerowa wynika z bilansu niezerowych danych wejściowych algorytmu, np. przyrost naturalny, jeśli liczba zgonów jest równa liczbie urodzeń"
