@@ -1,7 +1,7 @@
-import pandas as pd
-import common
+import common.etl as etl
 
 from pandas import DataFrame
+from common.globals import UnitsScheme as US
 
 '''
 We find out which units have to be transformed in order to fill the gaps
@@ -21,16 +21,6 @@ Data were collected, processed and stored in data/conf/unify.csv. During the pro
 9 - remove given entries
 '''
 
-header = ['id', 'parent_id', 'name', 'level', 'kind', 'has_description', 'description', 'years']
-types = { 'id': str, 'parent_id': str, 'level': 'Int64', 'kind': 'Int64' }
-
-input_path = './data/dict/units.csv'
-output_folder = './figures/unify_units_xxx'
-
-def extract(path: str) -> DataFrame:
-    df =  common.extract(path, header, types)
-
-    return df
 
 def transform(df: DataFrame) -> DataFrame:
     df = df.loc[df['has_description'] == True].copy()
@@ -38,7 +28,9 @@ def transform(df: DataFrame) -> DataFrame:
 
     return df
 
-def load(df: DataFrame, path: str):
+def load(df: DataFrame):
+    path = './figures/unify_units'
+
     load_step(df, path, '00')
     
     df = load_step_desc(df, path, 'zmiana rodzaju gminy z wiejskiego na miejsko-wiejski', '01')
@@ -64,9 +56,9 @@ def load_step_desc(df: DataFrame, path: str, description: str, step: str) -> Dat
 def load_step(df: DataFrame, path: str, step: str):
     output_path = f'{path}/unify_units_{step}.csv'
     
-    common.load(df, output_path)
+    etl.load(df, output_path)
   
 def main():
-    df = extract(input_path)
+    df = etl.extract(US.PATH, US.DATA_HEADER, US.TYPES)
     df = transform(df)
-    load(df, output_folder)
+    load(df)
