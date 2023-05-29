@@ -4,7 +4,8 @@ import common.etl as etl
 
 from pandas import DataFrame
 from common.globals import Data, Units, Unify, Population
-from common.data_frame import filter_by_var, filter_by_level, filter_by_level_kind, filter_by_id, unify
+from common.data_frame import filter_by_var, filter_by_id, unify
+from common.stats import simple_stats, quantile_stats, period_stats, cires_stats
 from common.utils import timeit, rename
 
 
@@ -17,13 +18,20 @@ We process the average for 5 years period, which will be used for identifing shr
 Preprocessing
 - filter data based on variable
 - unify data valuse based on configuration
+
+After calculation we don't have full details for following municipalities. 
+- 012414513031 - Radzionków
+- 012414915021 - Radlin
+
+Both of them were created after 1995, thus 5-years periods starts counting from later period. 
+It doesn't affect our further experiments.
 '''
 
 
 @timeit
 @rename('population_prep')
 def prep():
-    pre_loaded = True
+    pre_loaded = False
 
     # init
     basic_df = etl.extract(Units.BASIC_DATA, Units.HEADER, Units.TYPES)
@@ -34,57 +42,41 @@ def prep():
         data_df = etl.extract(Population.FIGURES + '/population_raw.csv', Data.HEADER, Data.TYPES)
 
     else:
+        # read from main source
         data_df = etl.extract(Population.DATA, Data.HEADER, Data.TYPES)
 
-        # filtered out data based on variable
+        # filtered out data based on variable, save for reference
         data_df = filter_by_var(data_df, Population.VAR_ID)
         etl.load(data_df, Population.FIGURES + '/population_raw.csv')
 
     # unify data: replace, merge, remove
     data_df = unify(data_df, conf_df)
-    etl.load(data_df, Population.FIGURES + '/populuation_unify.csv')
+    etl.load(data_df, Population.FIGURES + '/population_unify.csv')
 
     # leave only units from specific data source, in our case crosscheck with basic_df
     id_list = basic_df['unit_id'].values.tolist()
     data_df = filter_by_id(data_df, id_list)
-    etl.load(data_df, Population.FIGURES + '/populuation_prep.csv')
+    etl.load(data_df, Population.FIGURES + '/population_prep.csv')
 
 
 @timeit
 @rename('population_stats')
 def stats():
+    # init
+    data_df = etl.extract(Population.FIGURES + '/population_prep.csv', Data.HEADER, Data.TYPES)
+    basic_df = etl.extract(Units.BASIC_DATA, Units.HEADER, Units.TYPES)
 
+    # Milbert Parameter - population score
+    stats_df = simple_stats(data_df)
+    etl.load(stats_df, Population.FIGURES + '/population_stats.csv', ff='%.16f')
+    
+    quantile_df = quantile_stats(stats_df)
+    etl.load(quantile_df, Population.FIGURES + '/population_score.csv', ff='%.16f')
 
-#     step_df = pd.merge(step_df, population_df[['id', 'year', 'population']], on=['id', 'year'])
-# step_df[param_pp] = step_df['own_revenue'] / step_df['population']
+    # CIRES Parameter - special case only for population distribution
+    cires_df = period_stats(stats_df)
+    etl.load(cires_df, Population.FIGURES + '/population_cires_stats.csv', ff='%.16f')
 
-# step_df['diff'], step_df['rate'], step_df['mean'] = np.NaN, np.NaN, np.NaN
-# by_id = step_df.groupby('id')
-# for id, frame in by_id:
-#     frame['diff'] = frame['own_revenue_pp'].diff()
-#     frame['rate'] = frame['diff'] / (frame[param_pp] - frame['diff'])
-#     frame['mean'] = frame['rate'].rolling(window=5).mean()
-#     step_df.update(frame)
-
-# stats_df = init_stats_df(step_df, [param, param_pp, ratio, 'parentId', 'population', 'diff', 'rate'])
-# stats_quantile_score(stats_df, score)
-
-
-    # avg from last 2 years + group by
-    # quantile division
-
-    # need to generate 3 files
-    # stats
-    # cires 
-    # milbert
-
-    pass
-    # print(conf_df.head())
-    # print()
-
-    # print(basic_df.head())
-    # print()
-
-    # print(population_df.head(100))
-    # print()
+    cires_df = cires_stats(cires_df)
+    etl.load(cires_df, Population.FIGURES + '/population_cires_score.csv', ff='%.16f')
 

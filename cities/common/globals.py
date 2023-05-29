@@ -4,7 +4,11 @@ class Data:
         'unit_id': str,
         'var_id': 'Int64',
         'year': 'Int64',
-        'val': 'Int64'
+        'val': 'Int64',
+        'diff': 'Int64',
+        'rate': 'Float64',
+        'mean': 'Float64',
+        'score': 'Int64',
     }
 
 class Population:
