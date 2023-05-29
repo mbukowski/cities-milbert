@@ -1,7 +1,7 @@
 import common.etl as etl
 
 from pandas import DataFrame
-from common.globals import UnitsScheme as US
+from common.globals import Units
 
 '''
 We find out which units have to be transformed in order to fill the gaps
@@ -59,6 +59,6 @@ def load_step(df: DataFrame, path: str, step: str):
     etl.load(df, output_path)
   
 def main():
-    df = etl.extract(US.PATH, US.DATA_HEADER, US.TYPES)
+    df = etl.extract(Units.DATA, Units.DATA_HEADER, Units.TYPES)
     df = transform(df)
     load(df)

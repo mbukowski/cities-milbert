@@ -1,4 +1,4 @@
-class DataScheme:
+class Data:
     HEADER = ['unit_id', 'var_id', 'year', 'val']
     TYPES = {
         'unit_id': str,
@@ -6,13 +6,42 @@ class DataScheme:
         'year': 'Int64',
         'val': 'Int64'
     }
-    POPULATION_PATH = './data/bdl/data_unit_population.csv'
 
-class UnitsScheme:
-    HEADER = ['id', 'parent_id', 'teryt_id', 'name', 'level', 'kind']    
-    DATA_HEADER = ['id', 'parent_id', 'name', 'level', 'kind', 'has_description', 'description', 'years']
+class Population:
+    DATA = './data/bdl/data_unit_population.csv'
+    FIGURES = './figures/population'
+    VAR_ID = 72305
+
+class Migration:
+    DATA = ''
+    FIGURES = ''
+    VAR_ID = 1365234
+
+class WorkingAge:
+    DATA = ''
+    FIGURES = ''
+    VAR_ID = 152
+
+class Employment:
+    DATA = ''
+    FIGURES = ''
+    VAR_ID = 54821
+
+class Unemployed:
+    DATA = ''
+    FIGURES = ''
+    VAR_ID = 10514
+
+class OwnRevenue:
+    DATA = ''
+    FIGURES = ''
+    VAR_ID = 76070
+
+class Units:
+    HEADER = ['unit_id', 'parent_id', 'teryt_id', 'name', 'level', 'kind']    
+    DATA_HEADER = ['unit_id', 'parent_id', 'name', 'level', 'kind', 'has_description', 'description', 'years']
     TYPES = {
-        'id': str,
+        'unit_id': str,
         'parent_id': str,
         'teryt_id': str,
         'name': str,
@@ -22,12 +51,13 @@ class UnitsScheme:
         'description': str,
         'years': str
     }
-    PATH = './data/dict/units.csv'
-    BASIC_PATH = './figures/units/units_basic.csv'
-    CITY_PATH = './figures/units/units_city.csv'
-    FULL_PATH = './figures/units/units_full.csv'
+    DATA = './data/dict/units.csv'
+    FIGURES = './figures/units'
+    BASIC_DATA = FIGURES + '/units_basic.csv'
+    CITY_DATA = FIGURES + '/units_city.csv'
+    FULL_DATA = FIGURES + '/units_full.csv'
 
-class UnifyConfScheme:
+class Unify:
     HEADER = ['from', 'to', 'mode', 'name', 'description']
     TYPES = {
         'from': str,
@@ -36,4 +66,6 @@ class UnifyConfScheme:
         'name': str,
         'description': str
     }
-    PATH = './data/conf/unify.csv'
+    DATA = './data/conf/unify.csv'
+
+

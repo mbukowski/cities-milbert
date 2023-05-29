@@ -1,8 +1,7 @@
 import common.etl as etl
 
 from pandas import DataFrame
-from common.globals import UnitsScheme as US
-from common.globals import UnifyConfScheme as UCS
+from common.globals import Units, Unify
 from common.data_frame import unit_name
 
 
@@ -17,29 +16,29 @@ Based on taken approach we may have different results for quantile distribution
 
 
 def transform(df: DataFrame) -> DataFrame:
-    df['teryt_id'] = df['id'].str[2:4] + df['id'].str[7:12]
+    df['teryt_id'] = df['unit_id'].str[2:4] + df['unit_id'].str[7:12]
     df['name'] = df.apply(lambda row: unit_name(row['name']), axis=1)
 
-    unify_df = etl.extract(UCS.PATH, UCS.HEADER, UCS.TYPES)
+    unify_df = etl.extract(Unify.DATA, Unify.HEADER, Unify.TYPES)
     delete_list = unify_df['from'].loc[unify_df['mode'] == 9].values.tolist()
-    df = df.loc[~df['id'].isin(delete_list)]
+    df = df.loc[~df['unit_id'].isin(delete_list)]
 
     return df
 
 def load(df: DataFrame, path: str, level: int, kind: list[int]):
     df = df.loc[(df['level'] == level) & (df['kind'].isin(kind))]
-    df = df[US.HEADER]
+    df = df[Units.HEADER]
 
     etl.load(df, path)
   
 def main():
     # extract
-    df = etl.extract(US.PATH, US.DATA_HEADER, US.TYPES)
+    df = etl.extract(Units.DATA, Units.DATA_HEADER, Units.TYPES)
 
     # transform
     df = transform(df)
 
     # load
-    load(df, US.FULL_PATH, 6, [1, 2, 3])
-    load(df, US.BASIC_PATH, 6, [1, 3])
-    load(df, US.CITY_PATH, 6, [1, 4])
+    load(df, Units.FULL_DATA, 6, [1, 2, 3])
+    load(df, Units.BASIC_DATA, 6, [1, 3])
+    load(df, Units.CITY_DATA, 6, [1, 4])

@@ -1,3 +1,6 @@
+import pandas as pd
+
+from common.utils import timeit
 import milbert.population as population
 
 
@@ -11,7 +14,10 @@ We collect data statistics for 6 parameters:
 
 
 def main():
-    population.main()
+    pd.set_option('display.max_rows', 40)
+
+    population.prep()
+    population.stats()
 
     pass
 
