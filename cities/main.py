@@ -6,6 +6,7 @@ import milbert.population as population
 import common.etl as etl
 from common.globals import Population, Data
 
+
 '''
 Main app script which reads data and processes them according to Milbert algorithm.
 We collect data statistics for 6 parameters: 
