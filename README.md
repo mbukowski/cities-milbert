@@ -11,3 +11,10 @@ Files can be either in long or short format. For convenience we suggest to use a
 | data_unit_population.csv | unitId,varId,year,val |
 
 
+# TODO 
+- add example file to bdl, 
+- explain location folder, 
+- explain files and what kind of data they carry
+- some fixes from milbert docu
+- rename main to milbert 
+- add cires module and separate file 

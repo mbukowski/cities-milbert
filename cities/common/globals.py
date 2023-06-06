@@ -8,7 +8,7 @@ class Data:
         'diff': 'Int64',
         'rate': 'Float64',
         'mean': 'Float64',
-        'score': 'Int64',
+        'gmean': 'Float64'
     }
 
 class Population:
