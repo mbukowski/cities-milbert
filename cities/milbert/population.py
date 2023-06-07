@@ -5,7 +5,7 @@ import common.etl as etl
 from pandas import DataFrame
 from common.globals import Data, Units, Unify, Population
 from common.data_frame import filter_by_var, filter_by_id, unify
-from common.stats import simple_stats, quantile_stats, period_stats, cires_stats
+from common.stats import basic_stats, quantile_score, adjust_score
 from common.utils import timeit, rename
 
 
@@ -31,7 +31,7 @@ It doesn't affect our further experiments.
 @timeit
 @rename('population_prep')
 def prep():
-    pre_loaded = False
+    pre_loaded = True
 
     # init
     basic_df = etl.extract(Units.BASIC_DATA, Units.HEADER, Units.TYPES)
@@ -64,19 +64,24 @@ def prep():
 def stats():
     # init
     data_df = etl.extract(Population.FIGURES + '/population_prep.csv', Data.HEADER, Data.TYPES)
-    basic_df = etl.extract(Units.BASIC_DATA, Units.HEADER, Units.TYPES)
+    
+    # we can use basic_df to connect cities with specific score, 
+    # at this level it's mostly for visual debugging processes
+    # basic_df = etl.extract(Units.BASIC_DATA, Units.HEADER, Units.TYPES)
 
-    # Milbert Parameter - population score
-    stats_df = simple_stats(data_df)
+    # Milbert - population score
+    stats_df = basic_stats(data_df)
     etl.load(stats_df, Population.FIGURES + '/population_stats.csv', ff='%.16f')
     
-    quantile_df = quantile_stats(stats_df)
+    quantile_df = quantile_score(stats_df, 'gmean')
+    quantile_df = adjust_score(quantile_df, 'gmean', 0)
     etl.load(quantile_df, Population.FIGURES + '/population_score.csv', ff='%.16f')
 
-    # CIRES Parameter - special case only for population distribution
-    cires_df = period_stats(stats_df)
-    etl.load(cires_df, Population.FIGURES + '/population_cires_stats.csv', ff='%.16f')
+    # Decided not to use CIRES statistics in order to clean up some code
+    # # CIRES - special case only for population distribution
+    # cires_df = period_stats(stats_df)
+    # etl.load(cires_df, Population.FIGURES + '/population_cires_stats.csv', ff='%.16f')
 
-    cires_df = cires_stats(cires_df)
-    etl.load(cires_df, Population.FIGURES + '/population_cires_score.csv', ff='%.16f')
+    # cires_df = cires_stats(cires_df)
+    # etl.load(cires_df, Population.FIGURES + '/population_cires_score.csv', ff='%.16f')
 

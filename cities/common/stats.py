@@ -2,23 +2,28 @@ import numpy as np
 
 from pandas import DataFrame
 from common.globals import Data
+from scipy.stats import gmean
 
 QUANTILE_DISTRIBUTION = [0.2, 0.4, 0.6, 0.8]
-CIRES_DISTRIBUTION = [-0.005, -0.0015, 0.0015, 0.005]
 
 '''
 Calculate simple stats with basic scenario for parameters:
 - population
 - ...
 '''
-def simple_stats(df: DataFrame, win_len=5) -> DataFrame:
-    df['diff'], df['rate'], df['mean'] = np.NaN, np.NaN, np.NaN
+def basic_stats(df: DataFrame, win_len=5) -> DataFrame:
+    df['diff'], df['rate'], df['mean'], df['gmean'] = np.NaN, np.NaN, np.NaN, np.NaN
 
     by_id = df.groupby('unit_id')
     for unit_id, frame in by_id:
         frame['diff'] = frame['val'].diff()
         frame['rate'] = frame['diff'] / (frame['val'] - frame['diff'])
-        frame['mean'] = frame['rate'].rolling(window=win_len).mean()
+
+        window = frame['rate'].rolling(window=win_len)
+        frame['mean'] = window.mean()
+
+        # we add and substruct 1 as gmean function works only on positive values
+        frame['gmean'] = window.apply(lambda row: gmean(row + 1) - 1)
         df.update(frame)
 
     df = df.astype(Data.TYPES)
@@ -26,9 +31,9 @@ def simple_stats(df: DataFrame, win_len=5) -> DataFrame:
     return df
 
 '''
-Adds quantile score to our data
+Adds quantile score to our data  based on valuse of a specific column
 '''
-def quantile_stats(df, reversed=False) -> DataFrame:
+def quantile_score(df, param: str, reversed=False) -> DataFrame:
     # we need to drop all rows where we don't have NaN values in mean, 
     # otherwise we can't calculate quantiles
     df = df.dropna().copy()
@@ -40,57 +45,12 @@ def quantile_stats(df, reversed=False) -> DataFrame:
     by_year = df.groupby('year')
     for year, frame in by_year:
         quantiles = frame['mean'].quantile(QUANTILE_DISTRIBUTION).values.tolist()
-        frame['score'] = frame.apply(lambda row: score(row['mean'], quantiles, reversed=reversed), axis=1)
+        frame['score'] = frame.apply(lambda row: score(row[param], quantiles, reversed=reversed), axis=1)
         df.update(frame)
 
     # score has to be mapped manually
     df = df.astype(Data.TYPES)
     df = df.astype({'score': 'Int64'})
-
-    return df
-
-'''
-In period stats we compare values over longer period of time, ie. we don't compare to previous year but according to window length.
-Mostly used for cires stats, thus we don't require a ratio calculated
-'''
-def period_stats(df, win_len=5) -> DataFrame:
-    df['c_diff'], df['c_rate'] = np.NaN, np.NaN
-
-    by_id = df.groupby('unit_id')
-    for unit_id, frame in by_id:
-        frame['c_diff'] = frame['val'].diff(win_len)
-        frame['c_rate'] = frame['c_diff'] / (frame['val'] - frame['c_diff'])
-        df.update(frame)
-
-    # specific columns mapped separately
-    df = df.astype(Data.TYPES)
-    df = df.astype({'c_diff': 'Int64', 'c_rate': 'Float64'})
-
-    return df
-
-'''
-Processing cires parameter for mean and c_rate columns. 
-Mean sounds to be much more correct - much more polished, 
-but for the sake of experiment we also take under consideration we take also begin and the end of the period.
-'''
-def cires_stats(df) -> DataFrame:
-    # first we drop all rows where we don't have NaN values
-    df = df.dropna().copy()
-    df.reset_index(drop=True, inplace=True)
-
-    # we add two columns, one for avarege rate and another one for simple period
-    df['cires_rate'], df['cires_period'] = np.NaN, np.NaN
-
-    by_year = df.groupby('year')
-    for year, frame in by_year:
-        frame['cires_rate'] = frame.apply(lambda row: score(row['mean'], CIRES_DISTRIBUTION), axis=1)
-        frame['cires_period'] = frame.apply(lambda row: score(row['c_rate'], CIRES_DISTRIBUTION), axis=1)
-        df.update(frame)
-
-    # score has to be mapped manually
-    df = df.astype(Data.TYPES)
-    df = df.astype({'cires_rate': 'Int64'})
-    df = df.astype({'cires_period': 'Int64'})
 
     return df
 
@@ -114,3 +74,20 @@ def score(v: float, q: list[float], reversed=False) -> int:
         res = len(q) - res
 
     return res
+
+'''
+For most of the parameters we additionally adjust calculated scored based on specific threshold value.
+For example:
+    For population parameter the rate value 0 is used as imit determined for the 4th quintile. 
+    Positive developments always fall at the very least 4th quintile and are therefore rated with at least 3 points.
+
+
+| parameter | threshold | minimum score |
+| --------- | --------- | ------------- |
+| population |        0 |             3 |
+'''
+def adjust_score(df: DataFrame, param: str, value: int) -> DataFrame:
+    df['adj_score'] = np.NaN
+    df['adj_score'] = df.apply(lambda row: max(3, row['score']) if(row[param] > value) else row['score'] , axis=1)
+
+    return df

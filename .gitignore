@@ -5,6 +5,12 @@ figures
 # Mac specific file
 .DS_Store
 
+# Visual Studio Code specific
+.vscode
+
+# Conda env backups
+environment.yml.*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
