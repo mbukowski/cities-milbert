@@ -7,7 +7,7 @@ from common.globals import Data, Units, Unify, Population
 from common.data_frame import filter_by_var, filter_by_id, unify
 from common.stats import basic_stats, quantile_score, adjust_score
 from common.utils import timeit, rename
-
+from common.data_frame import change_types
 
 '''
 We load population data, we count the change between each year. 
@@ -31,7 +31,7 @@ It doesn't affect our further experiments.
 @timeit
 @rename('population_prep')
 def prep():
-    pre_loaded = True
+    pre_loaded = False
 
     # init
     basic_df = etl.extract(Units.BASIC_DATA, Units.HEADER, Units.TYPES)
@@ -56,14 +56,14 @@ def prep():
     # leave only units from specific data source, in our case crosscheck with basic_df
     id_list = basic_df['unit_id'].values.tolist()
     data_df = filter_by_id(data_df, id_list)
-    etl.load(data_df, Population.FIGURES + '/population_prep.csv')
+    etl.load(data_df, Population.FIGURES + '/population_basic.csv')
 
 
 @timeit
 @rename('population_stats')
 def stats():
     # init
-    data_df = etl.extract(Population.FIGURES + '/population_prep.csv', Data.HEADER, Data.TYPES)
+    data_df = etl.extract(Population.FIGURES + '/population_basic.csv', Data.HEADER, Data.TYPES)
     
     # we can use basic_df to connect cities with specific score, 
     # at this level it's mostly for visual debugging processes
@@ -71,10 +71,12 @@ def stats():
 
     # Milbert - population score
     stats_df = basic_stats(data_df)
+    stats_df = change_types(stats_df, Population.TYPES)
     etl.load(stats_df, Population.FIGURES + '/population_stats.csv', ff='%.16f')
     
     quantile_df = quantile_score(stats_df, 'gmean')
     quantile_df = adjust_score(quantile_df, 'gmean', 0)
+    quantile_df = change_types(quantile_df, Population.TYPES)
     etl.load(quantile_df, Population.FIGURES + '/population_score.csv', ff='%.16f')
 
     # Decided not to use CIRES statistics in order to clean up some code

@@ -1,8 +1,9 @@
 import numpy as np
 
 from pandas import DataFrame
-from common.globals import Data
 from scipy.stats import gmean
+from common.globals import Data, Population
+
 
 QUANTILE_DISTRIBUTION = [0.2, 0.4, 0.6, 0.8]
 
@@ -26,8 +27,6 @@ def basic_stats(df: DataFrame, win_len=5) -> DataFrame:
         frame['gmean'] = window.apply(lambda row: gmean(row + 1) - 1)
         df.update(frame)
 
-    df = df.astype(Data.TYPES)
-
     return df
 
 '''
@@ -49,8 +48,10 @@ def quantile_score(df, param: str, reversed=False) -> DataFrame:
         df.update(frame)
 
     # score has to be mapped manually
-    df = df.astype(Data.TYPES)
-    df = df.astype({'score': 'Int64'})
+    # df = df.astype(Data.TYPES)
+    # df = df.astype({'score': 'Int64'})
+    # df = change_types(df, Data.TYPES)
+    # df = change_types(df, Population.TYPES)
 
     return df
 

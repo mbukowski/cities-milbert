@@ -1,0 +1,7 @@
+{
+    "pre_processed": False,
+    "city_def": [19500, 105000],
+    "quantile_distr": [],
+    "cires_dist": [],
+    "note": "this will be probably moved to a yaml file"
+}

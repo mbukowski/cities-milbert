@@ -4,17 +4,26 @@ class Data:
         'unit_id': str,
         'var_id': 'Int64',
         'year': 'Int64',
-        'val': 'Int64',
-        'diff': 'Int64',
-        'rate': 'Float64',
-        'mean': 'Float64',
-        'gmean': 'Float64'
+        'val': 'Int64'
     }
 
 class Population:
     DATA = './data/bdl/data_unit_population.csv'
     FIGURES = './figures/population'
+    SUBJECT_ID = 'P2137'
     VAR_ID = 72305
+    TYPES = {
+        'unit_id': str,
+        'var_id': 'Int64',
+        'year': 'Int64',
+        'val': 'Int64',
+        'diff': 'Int64',
+        'rate': 'Float64',
+        'mean': 'Float64',
+        'gmean': 'Float64',
+        'score': 'Int64',
+        'adj_score': 'Int64'
+    }
 
 class Migration:
     DATA = ''
@@ -24,21 +33,25 @@ class Migration:
 class WorkingAge:
     DATA = ''
     FIGURES = ''
+    SUBJECT_ID = ''
     VAR_ID = 152
 
 class Employment:
     DATA = ''
     FIGURES = ''
+    SUBJECT_ID = ''
     VAR_ID = 54821
 
 class Unemployed:
     DATA = ''
     FIGURES = ''
+    SUBJECT_ID = ''
     VAR_ID = 10514
 
 class OwnRevenue:
     DATA = ''
     FIGURES = ''
+    SUBJECT_ID = ''
     VAR_ID = 76070
 
 class Units:
