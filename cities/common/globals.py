@@ -4,7 +4,7 @@ class Data:
         'unit_id': str,
         'var_id': 'Int64',
         'year': 'Int64',
-        'val': 'Int64'
+        'val': 'Float64'
     }
 
 class Population:
@@ -61,11 +61,27 @@ class Unemployed:
     SUBJECT_ID = ''
     VAR_ID = 10514
 
+'''
+Total: P2621 -> 76037
+Own:   P2622 -> 76070
+'''
 class OwnRevenue:
-    DATA = ''
-    FIGURES = ''
-    SUBJECT_ID = ''
+    DATA = './data/bdl/data_unit_own_revenue.csv'
+    FIGURES = './figures/own_revenue'
+    SUBJECT_ID = 'P2622'
     VAR_ID = 76070
+    TYPES = {
+        'unit_id': str,
+        'var_id': 'Int64',
+        'year': 'Int64',
+        'val': 'Float64',
+        'diff': 'Int64',
+        'rate': 'Float64',
+        'mean': 'Float64',
+        'gmean': 'Float64',
+        'score': 'Int64',
+        'adj_score': 'Int64'
+    }
 
 class Units:
     HEADER = ['unit_id', 'parent_id', 'teryt_id', 'name', 'level', 'kind']    

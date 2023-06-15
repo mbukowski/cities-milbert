@@ -23,11 +23,14 @@ We collect data statistics for 6 parameters:
 def main():
     pd.set_option('display.max_rows', 40)
 
-    # population.prep()
-    # population.stats()
+    population.prep()
+    population.stats()
 
     working_age.prep()
     working_age.stats()
+
+    own_revenue.prep()
+    # own_revenue.stats()
 
 
 

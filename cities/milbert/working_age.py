@@ -9,6 +9,7 @@ from common.stats import basic_stats, quantile_score, adjust_score
 from common.utils import timeit, rename
 from common.data_frame import change_types
 
+
 '''
 Durchschnittliche jährliche Entwicklung der nach Alter Erwerbsfähigen (20 bis 64 Jahre) 
 2013 bis 2018 in %
@@ -39,10 +40,12 @@ def prep():
     if pre_loaded:
         # direct reading from working_age_raw
         data_df = etl.extract(WorkingAge.FIGURES + '/working_age_raw.csv', Data.HEADER, Data.TYPES)
+        data_df['val'] = data_df['val'].astype(np.int64)
 
     else:
         # read from main source
         data_df = etl.extract(WorkingAge.DATA, Data.HEADER, Data.TYPES)
+        data_df['val'] = data_df['val'].astype(np.int64)
 
         # filtered out data based on variable, save for reference
         data_df = filter_by_var(data_df, WorkingAge.VAR_ID)
