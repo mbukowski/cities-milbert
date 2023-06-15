@@ -28,13 +28,26 @@ class Population:
 class Migration:
     DATA = ''
     FIGURES = ''
+    SUBJECT_ID = ''
     VAR_ID = 1365234
 
 class WorkingAge:
-    DATA = ''
-    FIGURES = ''
-    SUBJECT_ID = ''
+    DATA = './data/bdl/data_unit_working_age.csv'
+    FIGURES = './figures/working_age'
+    SUBJECT_ID = 'P1342'
     VAR_ID = 152
+    TYPES = {
+        'unit_id': str,
+        'var_id': 'Int64',
+        'year': 'Int64',
+        'val': 'Int64',
+        'diff': 'Int64',
+        'rate': 'Float64',
+        'mean': 'Float64',
+        'gmean': 'Float64',
+        'score': 'Int64',
+        'adj_score': 'Int64'
+    }
 
 class Employment:
     DATA = ''

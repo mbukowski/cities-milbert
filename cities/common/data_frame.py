@@ -56,7 +56,7 @@ Cast a pandas object to a specified dtype
 '''
 def change_types(df: DataFrame, types: dict[str, str]) -> DataFrame:
     for col in df.columns:
-        print(f"{col} -> {types[col]}")
+        # print(f"{col} -> {types[col]}")
         df = df.astype({col: types[col]})
 
     return df

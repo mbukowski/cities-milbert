@@ -10,10 +10,12 @@ from common.utils import timeit, rename
 from common.data_frame import change_types
 
 '''
+Durchschnittliche jährliche Bevölkerungsentwicklung 2013-2018 in %
+
 We load population data, we count the change between each year. 
 We process the average for 5 years period, which will be used for identifing shrinking cities: 
 - according to classic definition CIRES - in this definition we could work with units_city dataset
-- aligned with Milbert methodology where de assign points based on quantiles
+- aligned with Milbert methodology where we assign points based on quantiles
 
 Preprocessing
 - filter data based on variable
@@ -25,6 +27,10 @@ After calculation we don't have full details for following municipalities.
 
 Both of them were created after 1995, thus 5-years periods starts counting from later period. 
 It doesn't affect our further experiments.
+
+We calculate stats. Keep in mind we have to use geometric average not like we have done before an arithmetic one.
+Once we have values distributed by quantiles we need to adjust score by specific parameter value.
+For population a border is set to 4th  quantile. All averages above 0 get at least 3 points.
 '''
 
 

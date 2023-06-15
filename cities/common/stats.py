@@ -4,13 +4,15 @@ from pandas import DataFrame
 from scipy.stats import gmean
 from common.globals import Data, Population
 
-
 QUANTILE_DISTRIBUTION = [0.2, 0.4, 0.6, 0.8]
 
 '''
 Calculate simple stats with basic scenario for parameters:
 - population
-- ...
+- working_age
+
+We calculate both mean and gmean even though we need only gmean.
+For geometric average, we add and substruct 1 as gmean function works only on positive values.
 '''
 def basic_stats(df: DataFrame, win_len=5) -> DataFrame:
     df['diff'], df['rate'], df['mean'], df['gmean'] = np.NaN, np.NaN, np.NaN, np.NaN
@@ -22,9 +24,8 @@ def basic_stats(df: DataFrame, win_len=5) -> DataFrame:
 
         window = frame['rate'].rolling(window=win_len)
         frame['mean'] = window.mean()
-
-        # we add and substruct 1 as gmean function works only on positive values
         frame['gmean'] = window.apply(lambda row: gmean(row + 1) - 1)
+
         df.update(frame)
 
     return df
@@ -86,6 +87,7 @@ For example:
 | parameter | threshold | minimum score |
 | --------- | --------- | ------------- |
 | population |        0 |             3 |
+| working_age |       0 |             3 |
 '''
 def adjust_score(df: DataFrame, param: str, value: int) -> DataFrame:
     df['adj_score'] = np.NaN
