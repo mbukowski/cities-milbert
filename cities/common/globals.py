@@ -2,9 +2,9 @@ class Data:
     HEADER = ['unit_id', 'var_id', 'year', 'val']
     TYPES = {
         'unit_id': str,
-        'var_id': 'Int64',
-        'year': 'Int64',
-        'val': 'Float64'
+        'var_id': int,
+        'year': int,
+        'val': float
     }
 
 class Population:
@@ -14,15 +14,15 @@ class Population:
     VAR_ID = 72305
     TYPES = {
         'unit_id': str,
-        'var_id': 'Int64',
-        'year': 'Int64',
-        'val': 'Int64',
+        'var_id': int,
+        'year': int,
+        'val': int,
         'diff': 'Int64',
-        'rate': 'Float64',
-        'mean': 'Float64',
-        'gmean': 'Float64',
-        'score': 'Int64',
-        'adj_score': 'Int64'
+        'rate': float,
+        'mean': float,
+        'gmean': float,
+        'score': int,
+        'adj_score': int
     }
 
 class Migration:
@@ -38,15 +38,15 @@ class WorkingAge:
     VAR_ID = 152
     TYPES = {
         'unit_id': str,
-        'var_id': 'Int64',
-        'year': 'Int64',
-        'val': 'Int64',
+        'var_id': int,
+        'year': int,
+        'val': int,
         'diff': 'Int64',
-        'rate': 'Float64',
-        'mean': 'Float64',
-        'gmean': 'Float64',
-        'score': 'Int64',
-        'adj_score': 'Int64'
+        'rate': float,
+        'mean': float,
+        'gmean': float,
+        'score': int,
+        'adj_score': int
     }
 
 class Employment:
@@ -72,46 +72,60 @@ class OwnRevenue:
     VAR_ID = 76070
     TYPES = {
         'unit_id': str,
-        'var_id': 'Int64',
-        'year': 'Int64',
-        'val': 'Float64',
+        'var_id': int,
+        'year': int,
+        'val': int,
+        'intrpl': int,
         'diff': 'Int64',
-        'rate': 'Float64',
-        'mean': 'Float64',
-        'gmean': 'Float64',
-        'score': 'Int64',
-        'adj_score': 'Int64'
+        'rate': float,
+        'mean': float,
+        'gmean': float,
+        'score': int,
+        'adj_score': int
     }
 
 class Units:
-    HEADER = ['unit_id', 'parent_id', 'teryt_id', 'name', 'level', 'kind']    
-    DATA_HEADER = ['unit_id', 'parent_id', 'name', 'level', 'kind', 'has_description', 'description', 'years']
+    FIGURES = './figures/units'
+    DATA = FIGURES + '/units.csv'
+    BASIC_DATA = FIGURES + '/units_basic.csv'
+    CITY_DATA = FIGURES + '/units_city.csv'
+    FULL_DATA = FIGURES + '/units_full.csv'
+    HEADER = ['unit_id', 'parent_id', 'teryt_id', 'name', 'level', 'kind']
     TYPES = {
         'unit_id': str,
         'parent_id': str,
         'teryt_id': str,
         'name': str,
-        'level': 'Int64',
-        'kind': 'Int64',
+        'level': int,
+        'kind': int,
+    }
+
+
+class UnitsData:
+    DATA = './data/dict/units.csv'
+    HEADER = ['unit_id', 'parent_id', 'name', 'level', 'kind', 'has_description', 'description', 'years']
+    TYPES = {
+        'unit_id': str,
+        'parent_id': str,
+        'name': str,
+        'level': int,
+        'kind': int,
         'has_description': bool,
         'description': str,
         'years': str
     }
-    DATA = './data/dict/units.csv'
-    FIGURES = './figures/units'
-    BASIC_DATA = FIGURES + '/units_basic.csv'
-    CITY_DATA = FIGURES + '/units_city.csv'
-    FULL_DATA = FIGURES + '/units_full.csv'
+
 
 class Unify:
+    DATA = './data/conf/unify.csv'
     HEADER = ['from', 'to', 'mode', 'name', 'description']
     TYPES = {
         'from': str,
         'to': str,
-        'mode': 'Int64',
+        'mode': int,
         'name': str,
         'description': str
     }
-    DATA = './data/conf/unify.csv'
+    
 
 

@@ -46,8 +46,7 @@ Filters all data by unit_ids
 '''
 def filter_by_id(data_df: DataFrame, id_list: list[str]) -> DataFrame:
     df = data_df.loc[data_df['unit_id'].isin(id_list)].copy()
-    # df.reset_index(drop=True, inplace=True)
-
+    
     return df
 
 '''
@@ -56,7 +55,6 @@ Cast a pandas object to a specified dtype
 '''
 def change_types(df: DataFrame, types: dict[str, str]) -> DataFrame:
     for col in df.columns:
-        # print(f"{col} -> {types[col]}")
         df = df.astype({col: types[col]})
 
     return df

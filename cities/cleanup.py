@@ -1,5 +1,6 @@
 import cleanup.units_unify as unify
 import cleanup.units_classify as classify
+import cleanup.missing_data as missing_data
 
 
 '''
@@ -10,10 +11,10 @@ Executes cleanup and data preparation scripts
 
 
 def main():
-    unify.main()
-    classify.main()
-
-    pass
+    missing_data.main()
+    # unify.main()
+    # classify.main()
+    
 
 if __name__ == '__main__':
     main()

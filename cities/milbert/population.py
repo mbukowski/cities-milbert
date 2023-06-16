@@ -84,7 +84,7 @@ def stats():
     etl.load(stats_df, Population.FIGURES + '/population_stats.csv', ff='%.16f')
     
     quantile_df = quantile_score(stats_df, 'gmean')
-    quantile_df = adjust_score(quantile_df, 'gmean', 0)
+    quantile_df = adjust_score(quantile_df, 'gmean', 3, 0)
     quantile_df = change_types(quantile_df, Population.TYPES)
     etl.load(quantile_df, Population.FIGURES + '/population_score.csv', ff='%.16f')
 

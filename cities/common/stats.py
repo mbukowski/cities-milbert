@@ -48,12 +48,6 @@ def quantile_score(df, param: str, reversed=False) -> DataFrame:
         frame['score'] = frame.apply(lambda row: score(row[param], quantiles, reversed=reversed), axis=1)
         df.update(frame)
 
-    # score has to be mapped manually
-    # df = df.astype(Data.TYPES)
-    # df = df.astype({'score': 'Int64'})
-    # df = change_types(df, Data.TYPES)
-    # df = change_types(df, Population.TYPES)
-
     return df
 
 '''
@@ -88,9 +82,10 @@ For example:
 | --------- | --------- | ------------- |
 | population |        0 |             3 |
 | working_age |       0 |             3 |
+| own_revenue |       0 |             2 |
 '''
-def adjust_score(df: DataFrame, param: str, value: int) -> DataFrame:
+def adjust_score(df: DataFrame, param: str, min_score: int, threshold: int) -> DataFrame:
     df['adj_score'] = np.NaN
-    df['adj_score'] = df.apply(lambda row: max(3, row['score']) if(row[param] > value) else row['score'] , axis=1)
+    df['adj_score'] = df.apply(lambda row: max(min_score, row['score']) if(row[param] > threshold) else row['score'] , axis=1)
 
     return df

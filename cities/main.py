@@ -15,6 +15,8 @@ We collect data statistics for 6 parameters:
 - population
 - working age
 - own revenue
+- migration
+- employment
 - unemployment rate
 - ...
 '''
@@ -23,15 +25,17 @@ We collect data statistics for 6 parameters:
 def main():
     pd.set_option('display.max_rows', 40)
 
-    population.prep()
-    population.stats()
+    # # Population
+    # population.prep()
+    # population.stats()
 
-    working_age.prep()
-    working_age.stats()
+    # # Working Age
+    # working_age.prep()
+    # working_age.stats()
 
+    # Own Revenue
     own_revenue.prep()
-    # own_revenue.stats()
-
+    own_revenue.stats()
 
 
 if __name__ == '__main__':
