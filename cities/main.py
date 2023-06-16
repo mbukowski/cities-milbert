@@ -13,12 +13,11 @@ from common.globals import Population, Data
 Main app script which reads data and processes them according to Milbert algorithm.
 We collect data statistics for 6 parameters: 
 - population
-- working age
-- own revenue
 - migration
-- employment
-- unemployment rate
-- ...
+- working age
+- employment rate
+- unemployed
+- own revenue
 '''
 
 
@@ -33,9 +32,11 @@ def main():
     # working_age.prep()
     # working_age.stats()
 
-    # Own Revenue
-    own_revenue.prep()
-    own_revenue.stats()
+    # # Own Revenue
+    # own_revenue.prep()
+    # own_revenue.stats()
+
+    # Employment rate
 
 
 if __name__ == '__main__':
