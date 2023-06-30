@@ -26,10 +26,21 @@ class Population:
     }
 
 class Migration:
-    DATA = ''
-    FIGURES = ''
+    DATA = './data/bdl/data_unit_migration.csv'
+    FIGURES = './figures/migration'
     SUBJECT_ID = 'P1350'
     VAR_ID = 1365234
+    TYPES = {
+        'unit_id': str,
+        'var_id': int,
+        'year': int,
+        'val': int,
+        'population': int,
+        'rate': float,
+        'sum': float,
+        'score': int,
+        'adj_score': int
+    }
 
 class WorkingAge:
     DATA = './data/bdl/data_unit_working_age.csv'

@@ -7,9 +7,11 @@ from common.globals import Data, Population
 QUANTILE_DISTRIBUTION = [0.2, 0.4, 0.6, 0.8]
 
 '''
-Calculate simple stats with basic scenario for parameters:
+Calculate basic stats with basic scenario for parameters:
 - population
 - working_age
+- employment
+- own_revenue
 
 We calculate both mean and gmean even though we need only gmean.
 For geometric average, we add and substruct 1 as gmean function works only on positive values.
@@ -30,6 +32,26 @@ def basic_stats(df: DataFrame, win_len=5) -> DataFrame:
 
     return df
 
+
+'''
+Calculate stats with predefined rate,scenario for parameters:
+- migration
+
+In contrary to basic stats we simply sum up provided rates in given window.
+'''
+def rate_sum_stats(df: DataFrame, win_len=5) -> DataFrame:
+    df['sum'] = np.NaN
+
+    by_id = df.groupby('unit_id')
+    for unit_id, frame in by_id:
+        window = frame['rate'].rolling(window=win_len)
+        frame['sum'] = window.sum()
+
+        df.update(frame)
+
+    return df
+
+
 '''
 Adds quantile score to our data  based on valuse of a specific column
 '''
@@ -44,7 +66,7 @@ def quantile_score(df, param: str, reversed=False) -> DataFrame:
 
     by_year = df.groupby('year')
     for year, frame in by_year:
-        quantiles = frame['mean'].quantile(QUANTILE_DISTRIBUTION).values.tolist()
+        quantiles = frame[param].quantile(QUANTILE_DISTRIBUTION).values.tolist()
         frame['score'] = frame.apply(lambda row: score(row[param], quantiles, reversed=reversed), axis=1)
         df.update(frame)
 

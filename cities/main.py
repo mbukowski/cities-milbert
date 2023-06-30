@@ -26,25 +26,25 @@ We collect data statistics for 6 parameters:
 def main():
     pd.set_option('display.max_rows', 40)
 
-    # # Population
-    # population.prep()
-    # population.stats()
+    # Population
+    population.prep()
+    population.stats()
 
     # Migration
     migration.prep()
     migration.stats()
 
-    # # Working Age
-    # working_age.prep()
-    # working_age.stats()
+    # Working Age
+    working_age.prep()
+    working_age.stats()
 
-    # # Employment Rate
-    # employment.prep()
-    # employment.stats()
+    # Employment Rate
+    employment.prep()
+    employment.stats()
 
-    # # Own Revenue
-    # own_revenue.prep()
-    # own_revenue.stats()
+    # Own Revenue
+    own_revenue.prep()
+    own_revenue.stats()
 
 
 

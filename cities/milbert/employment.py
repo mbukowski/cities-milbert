@@ -122,7 +122,7 @@ def stats():
     # init
     data_df = etl.extract(Employment.FIGURES + '/employment_basic.csv', Data.HEADER, Data.TYPES)
     
-    # Milbert - working_age score
+    # Milbert - employment score
     stats_df = basic_stats(data_df)
     stats_df = change_types(stats_df, Employment.TYPES)
     etl.load(stats_df, Employment.FIGURES + '/employment_stats.csv', ff='%.16f')
