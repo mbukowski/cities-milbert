@@ -83,6 +83,8 @@ For example:
 | population |        0 |             3 |
 | working_age |       0 |             3 |
 | own_revenue |       0 |             2 |
+| employment |        0 |             2 |
+| migration |         0 |             2 |
 '''
 def adjust_score(df: DataFrame, param: str, min_score: int, threshold: int) -> DataFrame:
     df['adj_score'] = np.NaN

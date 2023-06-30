@@ -23,6 +23,11 @@ We process the average for 5 years period, which will be used for identifing shr
 We process parameters with Milbert methodology where we assign points based on quantiles. 
 In contrary to Milbert approach we don't smooth the data with 2 years average, but we take values year by year.
 
+Data for revenue in contrary to other parameters (population, working_age) are provided in float format.
+
+Preprocessing
+- filter data based on variable
+- unify data valuse based on configuration
 
 We identified 4 entries with data gaps:
 060611211021,76070,1995,0.00
@@ -44,11 +49,6 @@ We could have taken care of it if we would have artificially make sure that each
 In our case it's not that crucial. Linear interpolation would be a good exercise as well as presented municipalities 
 don't have a huge impact on the research.
 
-Data for revenue in contrary to other parameters (population, working_age) are provided in float format.
-
-Preprocessing
-- filter data based on variable
-- unify data valuse based on configuration
 
 For own revenue score adjustment point is 3rd quantile, which means every value above 0 gets 2 score points.
 '''

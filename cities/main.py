@@ -4,6 +4,8 @@ from common.utils import timeit
 import milbert.population as population
 import milbert.working_age as working_age
 import milbert.own_revenue as own_revenue
+import milbert.employment as employment
+import milbert.migration as migration
 
 import common.etl as etl
 from common.globals import Population, Data
@@ -28,15 +30,22 @@ def main():
     # population.prep()
     # population.stats()
 
+    # Migration
+    migration.prep()
+    migration.stats()
+
     # # Working Age
     # working_age.prep()
     # working_age.stats()
+
+    # # Employment Rate
+    # employment.prep()
+    # employment.stats()
 
     # # Own Revenue
     # own_revenue.prep()
     # own_revenue.stats()
 
-    # Employment rate
 
 
 if __name__ == '__main__':
