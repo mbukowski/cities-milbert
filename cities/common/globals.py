@@ -80,10 +80,25 @@ class Employment:
     }
 
 class Unemployed:
-    DATA = ''
-    FIGURES = ''
+    DATA = './data/bdl/data_unit_unemployed.csv'
+    FIGURES = './figures/unemployed'
     SUBJECT_ID = 'P1944'
     VAR_ID = 10514
+    TYPES = {
+        'unit_id': str,
+        'var_id': int,
+        'year': int,
+        'val': int,
+        'population': int,
+        'type': str,
+        'rate': float,
+        'diff': float,
+        'mean': float,
+        'gmean': float,
+        'score': int,
+        'adj_score': int
+    }
+    RATE = [(0.05, 'A'), (0.10, 'B'), (1.00, 'C')]
 
 '''
 Total: P2621 -> 76037
@@ -100,7 +115,7 @@ class OwnRevenue:
         'year': int,
         'val': int,
         'intrpl': int,
-        'diff': 'Int64',
+        'diff': 'Float64',
         'rate': float,
         'mean': float,
         'gmean': float,
@@ -150,6 +165,9 @@ class Unify:
         'name': str,
         'description': str
     }
-    
 
-
+class City:
+    SMALL = { 'id': 'S', 'name': 'small', 'min_size': 0, 'max_size': 20000 }
+    MEDIUM = { 'id': 'M', 'name': 'medium', 'min_size': 20000, 'max_size': 100000 }
+    LARGE = { 'id': 'L', 'name': 'large', 'min_size': 100000, 'max_size': 100000000 }
+    SIZE_MARGIN = 0.05
