@@ -73,7 +73,7 @@ def stats():
     data_df.rename(columns={'val_population': 'population'}, inplace=True)
     data_df['rate'] = data_df['val'] / (0.001 * data_df['population'])
     data_df = change_types(data_df, Migration.TYPES)
-    etl.load(data_df, Migration.FIGURES + '/migration_saldo.csv')
+    etl.load(data_df, Migration.FIGURES + '/migration_saldo.csv', ff='%.16f')
 
     # Milbert - migrtion score
     stats_df = rate_sum_stats(data_df)

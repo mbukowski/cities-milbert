@@ -1,6 +1,7 @@
 import re
 
 from pandas import DataFrame
+from common.globals import City, Unemployed
 
 def unit_name(name: str) -> str:
     res = name
@@ -9,6 +10,29 @@ def unit_name(name: str) -> str:
     res = re.sub(' do.*', '', res)
 
     return res
+
+'''
+Identifies a city type based on a population size
+'''
+def city_type(size: int) -> str:
+    medium_min = City.MEDIUM['min_size'] * (1 - City.SIZE_MARGIN)
+    medium_max = City.MEDIUM['max_size'] * (1 + City.SIZE_MARGIN)
+
+    if size < medium_min: return City.SMALL['id']
+    if size > medium_max: return City.LARGE['id']
+
+    return City.MEDIUM['id']
+
+
+'''
+Identifies a group to which unemployment rate should belong
+'''
+def unemp_rate(rate: float) -> str:
+    for r in Unemployed.RATE:
+        if rate <= r[0]: return r[1]
+    
+    return 'Z'
+
 
 '''
 Filters all data based on a given variable id, specific to our research

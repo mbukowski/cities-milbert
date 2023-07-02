@@ -8,5 +8,5 @@ dependencies:
 - requests
 - pandas
 - scipy
-
+- matplotlib
 
