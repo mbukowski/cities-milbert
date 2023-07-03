@@ -5,7 +5,7 @@ import common.etl as etl
 from pandas import DataFrame
 from common.globals import Data, Units, Unify, Unemployed, Population
 from common.data_frame import filter_by_var, filter_by_id, unify
-from common.stats import basic_stats, quantile_score, adjust_score, rate_gmean_stats
+from common.stats import basic_stats, quantile_score_ext, adjust_score, rate_gmean_stats
 from common.utils import timeit, rename
 from common.data_frame import change_types, city_type, unemp_rate
 
@@ -106,7 +106,7 @@ def stats_type():
     stats_df = change_types(stats_df, Unemployed.TYPES)
     etl.load(stats_df, Unemployed.FIGURES + '/unemployed_type_stats.csv', ff='%.16f')
     
-    quantile_df = quantile_score(stats_df, 'gmean', 'year', 'type', reversed=True)
+    quantile_df = quantile_score_ext(stats_df, 'gmean', 'year', 'type', reversed=True)
     quantile_df = adjust_score(quantile_df, 'gmean', 0, 0, reversed=True)
     quantile_df = change_types(quantile_df, Unemployed.TYPES)
     etl.load(quantile_df, Unemployed.FIGURES + '/unemployed_type_score.csv', ff='%.16f')
@@ -135,7 +135,7 @@ def stats_rate():
     stats_df = change_types(stats_df, Unemployed.TYPES)
     etl.load(stats_df, Unemployed.FIGURES + '/unemployed_unempl_stats.csv', ff='%.16f')
     
-    quantile_df = quantile_score(stats_df, 'gmean', 'year', 'type', reversed=True)
+    quantile_df = quantile_score_ext(stats_df, 'gmean', 'year', 'type', reversed=True)
     quantile_df = adjust_score(quantile_df, 'gmean', 0, 0, reversed=True)
     quantile_df = change_types(quantile_df, Unemployed.TYPES)
     etl.load(quantile_df, Unemployed.FIGURES + '/unemployed_unempl_score.csv', ff='%.16f')

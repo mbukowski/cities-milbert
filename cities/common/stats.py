@@ -101,7 +101,7 @@ def quantile_score(df, param: str, reversed=False) -> DataFrame:
 '''
 Adds quantile score to our data  based on valuse of a specific column, filtered by defined columns
 '''
-def quantile_score(df, param: str, col_a: str, col_b: str, reversed=False) -> DataFrame:
+def quantile_score_ext(df, param: str, col_a: str, col_b: str, reversed=False) -> DataFrame:
     # we need to drop all rows where we don't have NaN values in mean, 
     # otherwise we can't calculate quantiles
     df = df.dropna().copy()
