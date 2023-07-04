@@ -144,9 +144,9 @@ def stats_rate():
 @timeit
 @rename('umemployed_hist')
 def hist():
-    df = pd.read_csv(Unemployed.FIGURES + '/unemployed_rate.csv', sep=',', header=0)
+    df = pd.read_csv(Unemployed.FIGURES + '/unemployed_unempl_rate.csv', sep=',', header=0)
 
-    ax = df.hist(column='rate', bins=100, grid=False, figsize=(12,8), color='#86bf91', zorder=2, rwidth=0.9)
+    ax = df.hist(column='rate', bins=50, grid=False, figsize=(12,8), color='#86bf91', zorder=2, rwidth=0.9)
 
     plt.xlabel('Rate')
     plt.ylabel('Frequency')

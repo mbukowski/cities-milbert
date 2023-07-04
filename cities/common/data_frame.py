@@ -25,6 +25,23 @@ def city_type(size: int) -> str:
 
 
 '''
+Returns a city status based on collected score for Milbert methodology
+- significantly shrinking
+- shrinking
+- stabilization
+- growin
+- significantly growing
+'''
+def city_status(score: int) -> str:
+    if score <= 6: return 'E'
+    elif score <= 10: return 'D'
+    elif score <= 13: return 'C'
+    elif score <= 18: return 'B'
+    elif score <= 24: return 'A'
+    else: return 'F'
+
+
+'''
 Identifies a group to which unemployment rate should belong
 '''
 def unemp_rate(rate: float) -> str:

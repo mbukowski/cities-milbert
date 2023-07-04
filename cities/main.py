@@ -7,6 +7,7 @@ import milbert.own_revenue as own_revenue
 import milbert.employment as employment
 import milbert.migration as migration
 import milbert.unemployed as unemployed
+import milbert.summary as summary
 
 import common.etl as etl
 from common.globals import Population, Data
@@ -27,32 +28,34 @@ We collect data statistics for 6 parameters:
 def main():
     pd.set_option('display.max_rows', 40)
 
-    # Population
-    population.prep()
-    population.stats()
+    # # Population
+    # population.prep()
+    # population.stats()
 
-    # Migration
-    migration.prep()
-    migration.stats()
+    # # Migration
+    # migration.prep()
+    # migration.stats()
 
-    # Working Age
-    working_age.prep()
-    working_age.stats()
+    # # Working Age
+    # working_age.prep()
+    # working_age.stats()
 
-    # Employment Rate
-    employment.prep()
-    employment.stats()
+    # # Employment Rate
+    # employment.prep()
+    # employment.stats()
 
-    # Unemployed
-    unemployed.prep()
-    unemployed.stats_type()
-    unemployed.stats_rate()
+    # # Unemployed
+    # unemployed.prep()
+    # unemployed.stats_type()
+    # unemployed.stats_rate()
+    
+
+    # # Own Revenue
+    # own_revenue.prep()
+    # own_revenue.stats()
+
+    summary.default()
     # unemployed.hist()
-
-    # Own Revenue
-    own_revenue.prep()
-    own_revenue.stats()
-
 
 
 if __name__ == '__main__':
