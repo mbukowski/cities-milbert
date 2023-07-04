@@ -1,190 +1,190 @@
-from,to,mode,name,description
-011212006142,011212006143,1,Świątniki Górne,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-011212014022,011212014023,1,Koszyce,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-011212014032,011212014033,1,Nowe Brzesko,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-011212205032,011212205033,1,Bobowa,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-011212402032,011212402033,1,Czchów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-011212404072,011212404073,1,Szczucin,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-011212416012,011212416013,1,Ciężkowice,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-011212416052,011212416053,1,Radłów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-011212416062,011212416063,1,Ryglice,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-011212416132,011212416133,1,Wojnicz,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-011212416142,011212416143,1,Zakliczyn,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-012414604122,012414604123,1,Olsztyn,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-012414705062,012414705063,1,Sośnicowice,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-012414911032,012414911033,1,Krzanowice,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-020811404072,020811404073,1,Otyń,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-023015706012,023015706013,1,Jaraczewo,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-023015707052,023015707053,1,Koźminek,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-023015707082,023015707083,1,Opatówek,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-023015720012,023015720013,1,Chocz,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-023015720032,023015720033,1,Dobrzyca,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-023015830032,023015830033,1,Nekla,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-023016001022,023016001023,1,Budzyń,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-023016019032,023016019033,1,Kaczory,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-023216301042,023216301043,1,Tychowo,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-023216308032,023216308033,1,Gościno,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-023216309052,023216309053,1,Mielno,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-023216604072,023216604073,1,Stepnica,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-023216607012,023216607013,1,Dziwnów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-030210110052,030210110053,1,Olszyna,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-030210324032,030210324033,1,Kamieniec Ząbkowicki,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-030210420022,030210420023,1,Prusice,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-030210423082,030210423083,1,Siechnice,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-031613209102,031613209103,1,Prószków,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-031613209122,031613209123,1,Tułowice,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-040410808072,040410808073,1,Skępe,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-040410811052,040410811053,1,Piotrków Kujawski,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-040416814082,040416814083,1,Pruszcz,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-042815415062,042815415063,1,Miłakowo,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-042815415072,042815415073,1,Miłomłyn,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-042815617042,042815617043,1,Pasym,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-042815617082,042815617083,1,Wielbark,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-051011506102,051011506103,1,Rzgów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-051011508062,051011508063,1,Lutomiersk,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-051011710112,051011710113,1,Wolbórz,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-051011818042,051011818043,1,Lututów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-051011904062,051011904063,1,Piątek,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-051011915012,051011915013,1,Bolimów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-052615204052,052615204053,1,Daleszyce,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-052615204072,052615204073,1,Łagów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-052615204122,052615204123,1,Morawica,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-052615204132,052615204133,1,Nowa Słupia,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-052615204152,052615204153,1,Pierzchnica,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-052615205042,052615205043,1,Radoszyce,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-052615301032,052615301033,1,Nowy Korczyn,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-052615301042,052615301043,1,Pacanów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-052615301062,052615301063,1,Stopnica,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-052615301082,052615301083,1,Wiślica,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-052615302032,052615302033,1,Małogoszcz,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-052615302092,052615302093,1,Wodzisław,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-052615303042,052615303043,1,Opatowiec,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-052615306022,052615306023,1,Iwaniska,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-052615309032,052615309033,1,Klimontów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-052615309042,052615309043,1,Koprzywnica,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-052615312032,052615312033,1,Oleśnica,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-052615312082,052615312083,1,Szydłów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-060611002062,060611002063,1,Goraj,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-060611003112,060611003113,1,Siedliszcze,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-060611006042,060611006043,1,Izbica,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-060611018052,060611018053,1,Lubycza Królewska,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-060611018062,060611018063,1,Łaszczów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-060611018122,060611018123,1,Tyszowce,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-060611108052,060611108053,1,Kamionka,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-060611205062,060611205063,1,Modliborzyce,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-060611207022,060611207023,1,Annopol,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-060611207082,060611207083,1,Urzędów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-060611212022,060611212023,1,Józefów nad Wisłą,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-061813305052,061813305053,1,Kołaczyce,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-061813404072,061813404073,1,Pruchnik,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-061813409052,061813409053,1,Narol,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-061813413022,061813413023,1,Dubiecko,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-061813516032,061813516033,1,Boguchwała,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-061813603022,061813603023,1,Brzostek,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-061813611072,061813611073,1,Przecław,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-061813618052,061813618053,1,Zaklików,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-062013702072,062013702073,1,Michałowo,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-062013711042,062013711043,1,Krynki,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-062013711092,062013711093,1,Suchowola,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-062013813032,062013813033,1,Czyżew,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-062013813092,062013813093,1,Szepietowo,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-071412912042,071412912043,1,Cegłów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-071412912072,071412912073,1,Halinów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-071412912122,071412912123,1,Mrozy,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-071422520042,071422520043,1,Czerwińsk nad Wisłą,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-071422520082,071422520083,1,Nowe Miasto,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-071422520112,071422520113,1,Sochocin,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-071422537032,071422537033,1,Lubowidz,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-071422709062,071422709063,1,Solec nad Wisłą,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-071422725062,071422725063,1,Jedlnia-Letnisko,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-071427004042,071427004043,1,Sanniki,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-071427129052,071427129053,1,Kosów Lacki,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-071427338052,071427338053,1,Wiskitki,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-011216911021,011216911023,1,Szczawnica,"zmiana rodzaju gminy z miejskiego na miejsko-wiejski"
-030210302031,030210302033,1,Pieszyce,"zmiana rodzaju gminy z miejskiego na miejsko-wiejski"
-042214011021,042214011023,1,Jastarnia,"zmiana rodzaju gminy z miejskiego na miejsko-wiejski"
-042214011041,042214011043,1,Władysławowo,"zmiana rodzaju gminy z miejskiego na miejsko-wiejski"
-042214213011,042214213013,1,Czarna Woda,"zmiana rodzaju gminy z miejskiego na miejsko-wiejski"
-060611211084,060611211021,1,Stoczek Łukowski,"zmiana rodzaju gminy - utworzenie gminy miejskiej"
-060611211085,060611211082,1,Stoczek Łukowski,"zmiana rodzaju gminy - utworzenie gminy wiejskiej"
-023216605052,023216418032,1,Radowo Małe,"zmiana przynależności gminy z powiatu gryfickiego do łobeskiego"
-042214209102,042214216042,1,Stary Targ,"zmiana przynależności gminy z powiatu malborskiego do sztumskiego"
-042214209092,042214216032,1,Stary Dzierzgoń,"zmiana przynależności gminy z powiatu malborskiego do sztumskiego"
-042214209052,042214216022,1,Mikołajki Pomorskie,"zmiana przynależności gminy z powiatu malborskiego do sztumskiego"
-042815506032,042815519012,1,Budry,"zmiana przynależności gminy z powiatu giżyckiego do węgorzewskiego"
-042815506072,042815519022,1,Pozezdrze,"zmiana przynależności gminy z powiatu giżyckiego do węgorzewskiego"
-042815506022,042815518012,1,Banie Mazurskie,"zmiana przynależności gminy z powiatu giżyckiego do gołdapskiego"
-042815513012,042815518022,1,Dubeninki,"zmiana przynależności gminy z powiatu olecko-gołdapskiego do gołdapskiego"
-051011506011,051011521011,1,Brzeziny,"zmiana przynależności gminy z powiatu łódzkiego wschodniego do brzezińskiego"
-051011506042,051011521022,1,Brzeziny,"zmiana przynależności gminy z powiatu łódzkiego wschodniego do brzezińskiego"
-051011506052,051011521032,1,Dmosin,"zmiana przynależności gminy z powiatu łódzkiego wschodniego do brzezińskiego"
-051011506062,051011521042,1,Jeżów,"zmiana przynależności gminy z powiatu łódzkiego wschodniego do brzezińskiego"
-051011506092,051011521052,1,Rogów,"zmiana przynależności gminy z powiatu łódzkiego wschodniego do brzezińskiego"
-061813301012,061813321012,1,Baligród,"zmiana przynależności gminy z powiatu bieszczadzkiego do leskiego"
-061813301022,061813321022,1,Cisna,"zmiana przynależności gminy z powiatu bieszczadzkiego do leskiego"
-061813301062,061813321042,1,Olszanica,"zmiana przynależności gminy z powiatu bieszczadzkiego do leskiego"
-061813301072,061813321052,1,Solina,"zmiana przynależności gminy z powiatu bieszczadzkiego do leskiego"
-020811404093,020811412013,1,Sława,"zmiana przynależności gminy z powiatu nowosolskiego do wschowskiego"
-020811404094,020811412014,1,Sława - miasto,"zmiana przynależności gminy z powiatu nowosolskiego do wschowskiego"
-020811404095,020811412015,1,Sława - obszar wiejski,"zmiana przynależności gminy z powiatu nowosolskiego do wschowskiego"
-020811404103,020811412023,1,Szlichtyngowa,"zmiana przynależności gminy z powiatu nowosolskiego do wschowskiego"
-020811404104,020811412024,1,Szlichtyngowa - miasto,"zmiana przynależności gminy z powiatu nowosolskiego do wschowskiego"
-020811404105,020811412025,1,Szlichtyngowa - obszar wiejski,"zmiana przynależności gminy z powiatu nowosolskiego do wschowskiego"
-020811404113,020811412033,1,Wschowa,"zmiana przynależności gminy z powiatu nowosolskiego do wschowskiego"
-020811404114,020811412034,1,Wschowa - miasto,"zmiana przynależności gminy z powiatu nowosolskiego do wschowskiego"
-020811404115,020811412035,1,Wschowa - obszar wiejski,"zmiana przynależności gminy z powiatu nowosolskiego do wschowskiego"
-023216604013,023216418013,1,Dobra,"zmiana przynależności gminy z powiatu goleniowskiego do łobeskiego"
-023216604014,023216418014,1,Dobra - miasto,"zmiana przynależności gminy z powiatu goleniowskiego do łobeskiego"
-023216604015,023216418015,1,Dobra - obszar wiejski,"zmiana przynależności gminy z powiatu goleniowskiego do łobeskiego"
-023216614073,023216418023,1,Łobez,"zmiana przynależności gminy z powiatu stargardzkiego do łobeskiego"
-023216614074,023216418024,1,Łobez - miasto,"zmiana przynależności gminy z powiatu stargardzkiego do łobeskiego"
-023216614075,023216418025,1,Łobez - obszar wiejski,"zmiana przynależności gminy z powiatu stargardzkiego do łobeskiego"
-023216605063,023216418043,1,Resko,"zmiana przynależności gminy z powiatu gryfickiego do łobeskiego"
-023216605064,023216418044,1,Resko - miasto,"zmiana przynależności gminy z powiatu gryfickiego do łobeskiego"
-023216605065,023216418045,1,Resko - obszar wiejski,"zmiana przynależności gminy z powiatu gryfickiego do łobeskiego"
-023216614123,023216418053,1,Węgorzyno,"zmiana przynależności gminy z powiatu stargardzkiego do łobeskiego"
-023216614124,023216418054,1,Węgorzyno - miasto,"zmiana przynależności gminy z powiatu stargardzkiego do łobeskiego"
-023216614125,023216418055,1,Węgorzyno - obszar wiejski,"zmiana przynależności gminy z powiatu stargardzkiego do łobeskiego"
-042214209023,042214216013,1,Dzierzgoń,"zmiana przynależności gminy z powiatu malborskiego do sztumskiego"
-042214209024,042214216014,1,Dzierzgoń - miasto,"zmiana przynależności gminy z powiatu malborskiego do sztumskiego"
-042214209025,042214216015,1,Dzierzgoń - obszar wiejski,"zmiana przynależności gminy z powiatu malborskiego do sztumskiego"
-042214209113,042214216053,1,Sztum,"zmiana przynależności gminy z powiatu malborskiego do sztumskiego"
-042214209114,042214216054,1,Sztum - miasto,"zmiana przynależności gminy z powiatu malborskiego do sztumskiego"
-042214209115,042214216055,1,Sztum - obszar wiejski,"zmiana przynależności gminy z powiatu malborskiego do sztumskiego"
-042815506093,042815519033,1,Węgorzewo,"zmiana przynależności gminy z powiatu giżyckiego do węgorzewskiego"
-042815506094,042815519034,1,Węgorzewo - miasto,"zmiana przynależności gminy z powiatu giżyckiego do węgorzewskiego"
-042815506095,042815519035,1,Węgorzewo - obszar wiejski,"zmiana przynależności gminy z powiatu giżyckiego do węgorzewskiego"
-042815513023,042815518033,1,Gołdap,"zmiana przynależności gminy z powiatu olecko-gołdapskiego do gołdapskiego"
-042815513024,042815518034,1,Gołdap - miasto,"zmiana przynależności gminy z powiatu olecko-gołdapskiego do gołdapskiego"
-042815513025,042815518035,1,Gołdap - obszar wiejski,"zmiana przynależności gminy z powiatu olecko-gołdapskiego do gołdapskiego"
-061813301043,061813321033,1,Lesko,"zmiana przynależności gminy z powiatu bieszczadzkiego do leskiego"
-061813301044,061813321034,1,Lesko - miasto,"zmiana przynależności gminy z powiatu bieszczadzkiego do leskiego"
-061813301045,061813321035,1,Lesko - obszar wiejski,"zmiana przynależności gminy z powiatu bieszczadzkiego do leskiego"
-060611006082,060611003153,1,Rejowiec,"zmiana przynależności gminy z powiatu krasnostawskiego do chełmskiego"
-060611003152,060611003153,1,Rejowiec,"zmiana przynależności gminy z powiatu krasnostawskiego do chełmskiego; zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-071427306102,071413018063,1,Tarczyn,"zmiana przynależności gminy z powiatu grójeckiego do piaseczyńskiego; zmiana rodzaju gminy z wiejskiego na miejsko-wiejski"
-011212312021,012415001081,1,Sławków,"przeniesienie gminy z powiatu olkuskiego w woj. małopolskim do powiatu będzińskiego w woj. śląskim"
-061813305102,011212416162,1,Szerzyny,"przeniesienie gminy z powiatu jasielskiego w woj. podkarpackim do powiatu tarnowskiego w woj. małopolskim"
-071412912021,071412912151,1,Sulejówek,"zmiana symbolu gminy"
-030210321091,030210365011,1,Wałbrzych,"zniesienie miasta na prawach powiatu; przywrócenie miastu wałbrzych statusu miasta na prawach powiatu"
-030210363011,030210365011,1,Wałbrzych,"zniesienie miasta na prawach powiatu; przywrócenie miastu wałbrzych statusu miasta na prawach powiatu"
-071412831001,071412865011,1,M.st.Warszawa,"zmiana ustroju miasta"
-020811409102,020811462011,2,Zielona Góra,"połączenie miasta na prawach powiatu zielona góra z gminą zielona góra"
-071412912031,999999999999,9,Wesoła,"zmiana przynależności gminy z powiatu mińskiego do warszawskiego; zniesienie gminy"
-071412831011,999999999999,9,Warszawa - Bemowo do 2001,"zniesienie gminy"
-071412831021,999999999999,9,Warszawa - Białołęka do 2001,"zniesienie gminy"
-071412831031,999999999999,9,Warszawa - Bielany do 2001,"zniesienie gminy"
-071412831041,999999999999,9,Warszawa - Centrum do 2001,"zniesienie gminy"
-071412831121,999999999999,9,Warszawa - Rembertów do 2001,"zniesienie gminy"
-071412831131,999999999999,9,Warszawa - Targówek do 2001,"zniesienie gminy"
-071412831141,999999999999,9,Warszawa - Ursus do 2001,"zniesienie gminy"
-071412831151,999999999999,9,Warszawa - Ursynów do 2001,"zniesienie gminy"
-071412831161,999999999999,9,Warszawa - Wawer do 2001,"zniesienie gminy"
-071412831171,999999999999,9,Warszawa - Wilanów do 2001,"zniesienie gminy"
-071412831181,999999999999,9,Warszawa - Włochy do 2001,"zniesienie gminy"
-071412831981,999999999999,9,Związek gmin dzielnic Warszawy do 2001,"zniesienie gminy"
-071412831991,999999999999,9,GMINY-DZIELNICY WARSZAWY NIE USTALONO do 2001,"zniesienie gminy"
-023216403042,999999999999,9,Ostrowice,"zniesienia gminy"
-011212210001,999999999999,9,Miejska strefa usług publicznych,""
-030210216001,999999999999,9,Miejska strefa usług publicznych,""
-040416710001,999999999999,9,Miejska strefa usług publicznych,""
+from,to,mode,name,description,start_year,end_year
+011212006142,011212006143,1,Świątniki Górne,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",1997,
+011212014022,011212014023,1,Koszyce,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2019,
+011212014032,011212014033,1,Nowe Brzesko,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2011,
+011212205032,011212205033,1,Bobowa,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2009,
+011212402032,011212402033,1,Czchów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2000,
+011212404072,011212404073,1,Szczucin,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2009,
+011212416012,011212416013,1,Ciężkowice,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",1998,
+011212416052,011212416053,1,Radłów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2010,
+011212416062,011212416063,1,Ryglice,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2001,
+011212416132,011212416133,1,Wojnicz,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2007,
+011212416142,011212416143,1,Zakliczyn,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2006,
+012414604122,012414604123,1,Olsztyn,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2022,
+012414705062,012414705063,1,Sośnicowice,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",1996,
+012414911032,012414911033,1,Krzanowice,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2001,
+020811404072,020811404073,1,Otyń,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2018,
+023015706012,023015706013,1,Jaraczewo,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2016,
+023015707052,023015707053,1,Koźminek,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2021,
+023015707082,023015707083,1,Opatówek,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2017,
+023015720012,023015720013,1,Chocz,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2015,
+023015720032,023015720033,1,Dobrzyca,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2014,
+023015830032,023015830033,1,Nekla,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2000,
+023016001022,023016001023,1,Budzyń,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2021,
+023016019032,023016019033,1,Kaczory,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2022,
+023216301042,023216301043,1,Tychowo,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2010,
+023216308032,023216308033,1,Gościno,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2011,
+023216309052,023216309053,1,Mielno,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2017,
+023216604072,023216604073,1,Stepnica,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2014,
+023216607012,023216607013,1,Dziwnów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2004,
+030210110052,030210110053,1,Olszyna,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2005,
+030210324032,030210324033,1,Kamieniec Ząbkowicki,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2021,
+030210420022,030210420023,1,Prusice,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2000,
+030210423082,030210423083,1,Siechnice,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",1997,
+031613209102,031613209103,1,Prószków,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2004,
+031613209122,031613209123,1,Tułowice,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2018,
+040410808072,040410808073,1,Skępe,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",1997,
+040410811052,040410811053,1,Piotrków Kujawski,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",1998,
+040416814082,040416814083,1,Pruszcz,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2022,
+042815415062,042815415063,1,Miłakowo,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",1998,
+042815415072,042815415073,1,Miłomłyn,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",1998,
+042815617042,042815617043,1,Pasym,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",1997,
+042815617082,042815617083,1,Wielbark,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2019,
+051011506102,051011506103,1,Rzgów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2006,
+051011508062,051011508063,1,Lutomiersk,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2022,
+051011710112,051011710113,1,Wolbórz,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2011,
+051011818042,051011818043,1,Lututów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2020,
+051011904062,051011904063,1,Piątek,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2020,
+051011915012,051011915013,1,Bolimów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2022,
+052615204052,052615204053,1,Daleszyce,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2007,
+052615204072,052615204073,1,Łagów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2018,
+052615204122,052615204123,1,Morawica,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2017,
+052615204132,052615204133,1,Nowa Słupia,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2019,
+052615204152,052615204153,1,Pierzchnica,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2019,
+052615205042,052615205043,1,Radoszyce,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2018,
+052615301032,052615301033,1,Nowy Korczyn,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2019,
+052615301042,052615301043,1,Pacanów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2019,
+052615301062,052615301063,1,Stopnica,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2015,
+052615301082,052615301083,1,Wiślica,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2018,
+052615302032,052615302033,1,Małogoszcz,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",1996,
+052615302092,052615302093,1,Wodzisław,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2021,
+052615303042,052615303043,1,Opatowiec,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2019,
+052615306022,052615306023,1,Iwaniska,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2022,
+052615309032,052615309033,1,Klimontów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2020,
+052615309042,052615309043,1,Koprzywnica,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2001,
+052615312032,052615312033,1,Oleśnica,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2019,
+052615312082,052615312083,1,Szydłów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2019,
+060611002062,060611002063,1,Goraj,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2021,
+060611003112,060611003113,1,Siedliszcze,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2016,
+060611006042,060611006043,1,Izbica,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2022,
+060611018052,060611018053,1,Lubycza Królewska,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2016,
+060611018062,060611018063,1,Łaszczów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2010,
+060611018122,060611018123,1,Tyszowce,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2000,
+060611108052,060611108053,1,Kamionka,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2021,
+060611205062,060611205063,1,Modliborzyce,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2014,
+060611207022,060611207023,1,Annopol,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",1996,
+060611207082,060611207083,1,Urzędów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2016,
+060611212022,060611212023,1,Józefów nad Wisłą,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2018,
+061813305052,061813305053,1,Kołaczyce,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2010,
+061813404072,061813404073,1,Pruchnik,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2011,
+061813409052,061813409053,1,Narol,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",1996,
+061813413022,061813413023,1,Dubiecko,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2021,
+061813516032,061813516033,1,Boguchwała,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2008,
+061813603022,061813603023,1,Brzostek,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2009,
+061813611072,061813611073,1,Przecław,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2010,
+061813618052,061813618053,1,Zaklików,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2014,
+062013702072,062013702073,1,Michałowo,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2009,
+062013711042,062013711043,1,Krynki,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2009,
+062013711092,062013711093,1,Suchowola,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",1997,
+062013813032,062013813033,1,Czyżew,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2011,
+062013813092,062013813093,1,Szepietowo,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2010,
+071412912042,071412912043,1,Cegłów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2022,
+071412912072,071412912073,1,Halinów,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2001,
+071412912122,071412912123,1,Mrozy,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2014,
+071422520042,071422520043,1,Czerwińsk nad Wisłą,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2020,
+071422520082,071422520083,1,Nowe Miasto,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2022,
+071422520112,071422520113,1,Sochocin,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2021,
+071422537032,071422537033,1,Lubowidz,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2019,
+071422709062,071422709063,1,Solec nad Wisłą,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2021,
+071422725062,071422725063,1,Jedlnia-Letnisko,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2022,
+071427004042,071427004043,1,Sanniki,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2018,
+071427129052,071427129053,1,Kosów Lacki,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2000,
+071427338052,071427338053,1,Wiskitki,"zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2021,
+011216911021,011216911023,1,Szczawnica,"zmiana rodzaju gminy z miejskiego na miejsko-wiejski",2008,
+030210302031,030210302033,1,Pieszyce,"zmiana rodzaju gminy z miejskiego na miejsko-wiejski",2016,
+042214011021,042214011023,1,Jastarnia,"zmiana rodzaju gminy z miejskiego na miejsko-wiejski",2017,
+042214011041,042214011043,1,Władysławowo,"zmiana rodzaju gminy z miejskiego na miejsko-wiejski",2015,
+042214213011,042214213013,1,Czarna Woda,"zmiana rodzaju gminy z miejskiego na miejsko-wiejski",2014,
+060611211084,060611211021,1,Stoczek Łukowski,"zmiana rodzaju gminy - utworzenie gminy miejskiej",1998,
+060611211085,060611211082,1,Stoczek Łukowski,"zmiana rodzaju gminy - utworzenie gminy wiejskiej",1998,
+023216605052,023216418032,1,Radowo Małe,"zmiana przynależności gminy z powiatu gryfickiego do łobeskiego",2002,
+042214209102,042214216042,1,Stary Targ,"zmiana przynależności gminy z powiatu malborskiego do sztumskiego",2002,
+042214209092,042214216032,1,Stary Dzierzgoń,"zmiana przynależności gminy z powiatu malborskiego do sztumskiego",2002,
+042214209052,042214216022,1,Mikołajki Pomorskie,"zmiana przynależności gminy z powiatu malborskiego do sztumskiego",2002,
+042815506032,042815519012,1,Budry,"zmiana przynależności gminy z powiatu giżyckiego do węgorzewskiego",2002,
+042815506072,042815519022,1,Pozezdrze,"zmiana przynależności gminy z powiatu giżyckiego do węgorzewskiego",2002,
+042815506022,042815518012,1,Banie Mazurskie,"zmiana przynależności gminy z powiatu giżyckiego do gołdapskiego",2002,
+042815513012,042815518022,1,Dubeninki,"zmiana przynależności gminy z powiatu olecko-gołdapskiego do gołdapskiego",2002,
+051011506011,051011521011,1,Brzeziny,"zmiana przynależności gminy z powiatu łódzkiego wschodniego do brzezińskiego",2002,
+051011506042,051011521022,1,Brzeziny,"zmiana przynależności gminy z powiatu łódzkiego wschodniego do brzezińskiego",2002,
+051011506052,051011521032,1,Dmosin,"zmiana przynależności gminy z powiatu łódzkiego wschodniego do brzezińskiego",2002,
+051011506062,051011521042,1,Jeżów,"zmiana przynależności gminy z powiatu łódzkiego wschodniego do brzezińskiego",2002,
+051011506092,051011521052,1,Rogów,"zmiana przynależności gminy z powiatu łódzkiego wschodniego do brzezińskiego",2002,
+061813301012,061813321012,1,Baligród,"zmiana przynależności gminy z powiatu bieszczadzkiego do leskiego",2002,
+061813301022,061813321022,1,Cisna,"zmiana przynależności gminy z powiatu bieszczadzkiego do leskiego",2002,
+061813301062,061813321042,1,Olszanica,"zmiana przynależności gminy z powiatu bieszczadzkiego do leskiego",2002,
+061813301072,061813321052,1,Solina,"zmiana przynależności gminy z powiatu bieszczadzkiego do leskiego",2002,
+020811404093,020811412013,1,Sława,"zmiana przynależności gminy z powiatu nowosolskiego do wschowskiego",2002,
+020811404094,020811412014,1,Sława - miasto,"zmiana przynależności gminy z powiatu nowosolskiego do wschowskiego",2002,
+020811404095,020811412015,1,Sława - obszar wiejski,"zmiana przynależności gminy z powiatu nowosolskiego do wschowskiego",2002,
+020811404103,020811412023,1,Szlichtyngowa,"zmiana przynależności gminy z powiatu nowosolskiego do wschowskiego",2002,
+020811404104,020811412024,1,Szlichtyngowa - miasto,"zmiana przynależności gminy z powiatu nowosolskiego do wschowskiego",2002,
+020811404105,020811412025,1,Szlichtyngowa - obszar wiejski,"zmiana przynależności gminy z powiatu nowosolskiego do wschowskiego",2002,
+020811404113,020811412033,1,Wschowa,"zmiana przynależności gminy z powiatu nowosolskiego do wschowskiego",2002,
+020811404114,020811412034,1,Wschowa - miasto,"zmiana przynależności gminy z powiatu nowosolskiego do wschowskiego",2002,
+020811404115,020811412035,1,Wschowa - obszar wiejski,"zmiana przynależności gminy z powiatu nowosolskiego do wschowskiego",2002,
+023216604013,023216418013,1,Dobra,"zmiana przynależności gminy z powiatu goleniowskiego do łobeskiego",2002,
+023216604014,023216418014,1,Dobra - miasto,"zmiana przynależności gminy z powiatu goleniowskiego do łobeskiego",2002,
+023216604015,023216418015,1,Dobra - obszar wiejski,"zmiana przynależności gminy z powiatu goleniowskiego do łobeskiego",2002,
+023216614073,023216418023,1,Łobez,"zmiana przynależności gminy z powiatu stargardzkiego do łobeskiego",2002,
+023216614074,023216418024,1,Łobez - miasto,"zmiana przynależności gminy z powiatu stargardzkiego do łobeskiego",2002,
+023216614075,023216418025,1,Łobez - obszar wiejski,"zmiana przynależności gminy z powiatu stargardzkiego do łobeskiego",2002,
+023216605063,023216418043,1,Resko,"zmiana przynależności gminy z powiatu gryfickiego do łobeskiego",2002,
+023216605064,023216418044,1,Resko - miasto,"zmiana przynależności gminy z powiatu gryfickiego do łobeskiego",2002,
+023216605065,023216418045,1,Resko - obszar wiejski,"zmiana przynależności gminy z powiatu gryfickiego do łobeskiego",2002,
+023216614123,023216418053,1,Węgorzyno,"zmiana przynależności gminy z powiatu stargardzkiego do łobeskiego",2002,
+023216614124,023216418054,1,Węgorzyno - miasto,"zmiana przynależności gminy z powiatu stargardzkiego do łobeskiego",2002,
+023216614125,023216418055,1,Węgorzyno - obszar wiejski,"zmiana przynależności gminy z powiatu stargardzkiego do łobeskiego",2002,
+042214209023,042214216013,1,Dzierzgoń,"zmiana przynależności gminy z powiatu malborskiego do sztumskiego",2002,
+042214209024,042214216014,1,Dzierzgoń - miasto,"zmiana przynależności gminy z powiatu malborskiego do sztumskiego",2002,
+042214209025,042214216015,1,Dzierzgoń - obszar wiejski,"zmiana przynależności gminy z powiatu malborskiego do sztumskiego",2002,
+042214209113,042214216053,1,Sztum,"zmiana przynależności gminy z powiatu malborskiego do sztumskiego",2002,
+042214209114,042214216054,1,Sztum - miasto,"zmiana przynależności gminy z powiatu malborskiego do sztumskiego",2002,
+042214209115,042214216055,1,Sztum - obszar wiejski,"zmiana przynależności gminy z powiatu malborskiego do sztumskiego",2002,
+042815506093,042815519033,1,Węgorzewo,"zmiana przynależności gminy z powiatu giżyckiego do węgorzewskiego",2002,
+042815506094,042815519034,1,Węgorzewo - miasto,"zmiana przynależności gminy z powiatu giżyckiego do węgorzewskiego",2002,
+042815506095,042815519035,1,Węgorzewo - obszar wiejski,"zmiana przynależności gminy z powiatu giżyckiego do węgorzewskiego",2002,
+042815513023,042815518033,1,Gołdap,"zmiana przynależności gminy z powiatu olecko-gołdapskiego do gołdapskiego",2002,
+042815513024,042815518034,1,Gołdap - miasto,"zmiana przynależności gminy z powiatu olecko-gołdapskiego do gołdapskiego",2002,
+042815513025,042815518035,1,Gołdap - obszar wiejski,"zmiana przynależności gminy z powiatu olecko-gołdapskiego do gołdapskiego",2002,
+061813301043,061813321033,1,Lesko,"zmiana przynależności gminy z powiatu bieszczadzkiego do leskiego",2002,
+061813301044,061813321034,1,Lesko - miasto,"zmiana przynależności gminy z powiatu bieszczadzkiego do leskiego",2002,
+061813301045,061813321035,1,Lesko - obszar wiejski,"zmiana przynależności gminy z powiatu bieszczadzkiego do leskiego",2002,
+060611006082,060611003153,1,Rejowiec,"zmiana przynależności gminy z powiatu krasnostawskiego do chełmskiego",2006,2016
+060611003152,060611003153,1,Rejowiec,"zmiana przynależności gminy z powiatu krasnostawskiego do chełmskiego; zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2017,
+071427306102,071413018063,1,Tarczyn,"zmiana przynależności gminy z powiatu grójeckiego do piaseczyńskiego; zmiana rodzaju gminy z wiejskiego na miejsko-wiejski",2003,
+011212312021,012415001081,1,Sławków,"przeniesienie gminy z powiatu olkuskiego w woj. małopolskim do powiatu będzińskiego w woj. śląskim",2002,
+061813305102,011212416162,1,Szerzyny,"przeniesienie gminy z powiatu jasielskiego w woj. podkarpackim do powiatu tarnowskiego w woj. małopolskim",2003,
+071412912021,071412912151,1,Sulejówek,"zmiana symbolu gminy",2002,
+030210321091,030210365011,1,Wałbrzych,"zniesienie miasta na prawach powiatu; przywrócenie miastu wałbrzych statusu miasta na prawach powiatu",2013,
+030210363011,030210365011,1,Wałbrzych,"zniesienie miasta na prawach powiatu; przywrócenie miastu wałbrzych statusu miasta na prawach powiatu",2003,2012
+071412831001,071412865011,1,M.st.Warszawa,"zmiana ustroju miasta",2002,
+020811409102,020811462011,2,Zielona Góra,"połączenie miasta na prawach powiatu zielona góra z gminą zielona góra",2015,
+071412912031,999999999999,9,Wesoła,"zmiana przynależności gminy z powiatu mińskiego do warszawskiego; zniesienie gminy",,
+071412831011,999999999999,9,Warszawa - Bemowo do 2001,"zniesienie gminy",,
+071412831021,999999999999,9,Warszawa - Białołęka do 2001,"zniesienie gminy",,
+071412831031,999999999999,9,Warszawa - Bielany do 2001,"zniesienie gminy",,
+071412831041,999999999999,9,Warszawa - Centrum do 2001,"zniesienie gminy",,
+071412831121,999999999999,9,Warszawa - Rembertów do 2001,"zniesienie gminy",,
+071412831131,999999999999,9,Warszawa - Targówek do 2001,"zniesienie gminy",,
+071412831141,999999999999,9,Warszawa - Ursus do 2001,"zniesienie gminy",,
+071412831151,999999999999,9,Warszawa - Ursynów do 2001,"zniesienie gminy",,
+071412831161,999999999999,9,Warszawa - Wawer do 2001,"zniesienie gminy",,
+071412831171,999999999999,9,Warszawa - Wilanów do 2001,"zniesienie gminy",,
+071412831181,999999999999,9,Warszawa - Włochy do 2001,"zniesienie gminy",,
+071412831981,999999999999,9,Związek gmin dzielnic Warszawy do 2001,"zniesienie gminy",,
+071412831991,999999999999,9,GMINY-DZIELNICY WARSZAWY NIE USTALONO do 2001,"zniesienie gminy",,
+023216403042,999999999999,9,Ostrowice,"zniesienia gminy",,
+011212210001,999999999999,9,Miejska strefa usług publicznych,"",,
+030210216001,999999999999,9,Miejska strefa usług publicznych,"",,
+040416710001,999999999999,9,Miejska strefa usług publicznych,"",,
