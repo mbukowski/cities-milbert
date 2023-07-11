@@ -79,7 +79,8 @@ def prep():
     pre_loaded = False
 
     # init
-    basic_df = etl.extract(Units.BASIC_DATA, Units.HEADER, Units.TYPES)
+    # basic_df = etl.extract(Units.BASIC_DATA, Units.HEADER, Units.TYPES)
+    full_df = etl.extract(Units.FULL_DATA, Units.HEADER, Units.TYPES)
     conf_df = etl.extract(Unify.DATA, Unify.HEADER, Unify.TYPES)
 
     if pre_loaded:
@@ -100,8 +101,8 @@ def prep():
     data_df = unify(data_df, conf_df)
     etl.load(data_df, Employment.FIGURES + '/employment_unify.csv')
 
-    # leave only units from specific data source, in our case crosscheck with basic_df
-    id_list = basic_df['unit_id'].values.tolist()
+    # leave only units from specific data source, in our case crosscheck with full_df
+    id_list = full_df['unit_id'].values.tolist()
     data_df = filter_by_id(data_df, id_list)
     # etl.load(data_df, Employment.FIGURES + '/employment_basic.csv')
 
@@ -113,14 +114,15 @@ def prep():
 
     data_df['val'] = data_df['intrpl']
     data_df.drop(['intrpl'], inplace=True, axis=1)
-    etl.load(data_df, Employment.FIGURES + '/employment_basic.csv')
+    # etl.load(data_df, Employment.FIGURES + '/employment_basic.csv')
+    etl.load(data_df, Employment.FIGURES + '/employment_full.csv')
 
 
 @timeit
 @rename('employment_stats')
 def stats():
     # init
-    data_df = etl.extract(Employment.FIGURES + '/employment_basic.csv', Data.HEADER, Data.TYPES)
+    data_df = etl.extract(Employment.FIGURES + '/employment_full.csv', Data.HEADER, Data.TYPES)
     
     # Milbert - employment score
     stats_df = basic_stats(data_df)

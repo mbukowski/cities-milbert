@@ -1,4 +1,5 @@
 import re
+import pandas as pd
 
 from pandas import DataFrame
 from common.globals import City, Unemployed
@@ -14,7 +15,10 @@ def unit_name(name: str) -> str:
 '''
 Identifies a city type based on a population size
 '''
-def city_type(size: int) -> str:
+def city_type(size: int, unit_id: str) -> str:
+    # TODO this should come from parameter 'kind' but we don't have this information in dataframe with compiled data
+    if unit_id.endswith('2'): return City.RURAL['id']
+
     medium_min = City.MEDIUM['min_size'] * (1 - City.SIZE_MARGIN)
     medium_max = City.MEDIUM['max_size'] * (1 + City.SIZE_MARGIN)
 
@@ -22,6 +26,27 @@ def city_type(size: int) -> str:
     if size > medium_max: return City.LARGE['id']
 
     return City.MEDIUM['id']
+
+
+# @obsolete
+# '''
+# Calculates a city size for a city within an urban-rural commune for given year
+# '''
+# def city_size(df: DataFrame, unit_id: str, year: int) -> int:
+#     print(f'{unit_id} -> {year}')
+#     # default - no matching row
+#     v = -1
+
+#     v_series = df.loc[(df['parent_id'] == unit_id) & (df['year'] == year) & (df['kind'] == 4)]['val']
+    
+#     if not v_series.empty:
+#         v = v_series.values[0]
+#         if pd.isnull(v):
+#             v = 0
+
+#     print(v)
+
+#     return v
 
 
 '''
@@ -38,11 +63,46 @@ def city_status(score: int) -> str:
     elif score <= 13: return 'C'
     elif score <= 18: return 'B'
     elif score <= 24: return 'A'
-    else: return 'F'
+    else: return 'Z'
 
 
 '''
-Identifies a group to which unemployment rate should belong
+Returns a growth type based on 3 periods.
+- all A or 2xA and 1xB strong growth -> AA
+- all E or 2xE and 1xD strong shrinkage -> EE
+- all C or 2xC and 1xB or 1xD strong stable -> CC
+- from E to A or B, positive change -> EA
+- from A to E or D, negative change -> AE
+'''
+def growth_type(status: str, strategy) -> str:
+    if status in strategy:
+        return strategy[status]
+
+    return ''
+    # match status:
+    #     # case 'AAA' | 'BAA' | 'ABA' | 'AAB':
+    #     case 'AAA':
+    #         return 'AA'
+    #     # case 'EEE' | 'DEE' | 'EDE' | 'EED':
+    #     case 'EEE':
+    #         return 'EE'
+    #     # case 'CCC' | 'BCC' | 'CBC' | 'CCB' | 'DCC' | 'CDC' | 'CCD':
+    #     case 'CCC':
+    #         return 'CC'
+    #     case 'EEA' | 'EEB':
+    #     # case 'EEA' | 'EEB' | 'EDA' | 'DEA' | 'DDA':
+    #     # case 'EEA' | 'EEB' | 'EDA' | 'DEA' | 'DDA' | 'EDB' | 'DEB' | 'DDB':
+    #         return 'EA'
+    #     case 'AAD' | 'AAE':
+    #     # case 'AAD' | 'AAE' | 'BAE' | 'ABE' | 'BBE':
+    #     # case 'AAD' | 'AAE' | 'BAE' | 'ABE' | 'BBE' | 'BAD' | 'ABD' | 'BBD':
+    #         return 'AE'
+    #     case _:
+    #         return ''
+
+'''
+Identifies a group to which unemployment rate should belong. 
+Don't know if we still use this probably not. Verify before removing.
 '''
 def unemp_rate(rate: float) -> str:
     for r in Unemployed.RATE:

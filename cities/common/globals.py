@@ -90,8 +90,9 @@ class Unemployed:
         'year': int,
         'val': int,
         'population': int,
-        'type': str,
         'rate': float,
+        'group': str,
+        'group_start': str,
         'diff': float,
         'mean': float,
         'gmean': float,
@@ -99,6 +100,7 @@ class Unemployed:
         'adj_score': int
     }
     RATE = [(0.015, 'A'), (0.085, 'B'), (1.00, 'C')]
+    DISTRIBUTION = [0.2, 0.8]
 
 '''
 Total: P2621 -> 76037
@@ -125,8 +127,13 @@ class OwnRevenue:
 
 class Stats:
     FIGURES = './figures/stats'
-    HEADER = ['unit_id', 'teryt_id', 'name', 'period_start', 'period_end', 'population', 'type', 
-              'pop', 'migr', 'age', 'empl', 'unempl', 'revenue', 'score', 'status']
+    # HEADER = ['unit_id', 'teryt_id', 'name', 'period_start', 'period_end', 'population_start', 'population_end', 'type', 
+    #           'pop', 'migr', 'age', 'empl', 'unempl', 'revenue', 'score', 'status']
+    HEADER = ['unit_id', 'teryt_id', 'name', 'level', 'kind',
+              'period_start', 'period_end', 'population_start', 'population_end', 'type',
+              'pop_rate', 'pop_points', 'migr_rate', 'migr_points', 'age_rate', 'age_points', 
+              'empl_rate', 'empl_points', 'unempl_rate', 'unempl_points', 'revenue_rate', 'revenue_points', 
+              'score', 'status']
     # TYPES = {
     #     'unit_id': str,
     #     'var_id': int,
@@ -149,6 +156,7 @@ class Units:
     BASIC_DATA = FIGURES + '/units_basic.csv'
     CITY_DATA = FIGURES + '/units_city.csv'
     FULL_DATA = FIGURES + '/units_full.csv'
+    COMPLETE_DATA = FIGURES + '/units_complete.csv'
     HEADER = ['unit_id', 'parent_id', 'teryt_id', 'name', 'level', 'kind']
     TYPES = {
         'unit_id': str,
@@ -177,18 +185,50 @@ class UnitsData:
 
 class Unify:
     DATA = './data/conf/unify.csv'
-    HEADER = ['from', 'to', 'mode', 'name', 'description']
+    HEADER = ['from', 'to', 'mode', 'name', 'description', 'start_year', 'end_year']
     TYPES = {
         'from': str,
         'to': str,
         'mode': int,
         'name': str,
-        'description': str
+        'description': str,
+        'start_year': 'Int64',
+        'end_year': 'Int64'
     }
 
 class City:
+    FIGURES = './figures/city'
+    POPULATION_DATA = FIGURES + '/city_population.csv'
+    RURAL = { 'id': 'R', 'name': 'rural' }
     SMALL = { 'id': 'S', 'name': 'small', 'min_size': 0, 'max_size': 20000 }
     MEDIUM = { 'id': 'M', 'name': 'medium', 'min_size': 20000, 'max_size': 100000 }
     LARGE = { 'id': 'L', 'name': 'large', 'min_size': 100000, 'max_size': 100000000 }
     SIZE_MARGIN = 0.00
+    QGIS_HEADER = ['teryt_id', 'name', 'level', 'kind', 
+                   'period_start', 'period_end', 'population_start', 'population_end', 
+                   'type', 'score', 'status']
+
+class GrowthStrategy:
+    STRONG_TREND = { 
+        'AAA': 'AA', 'EEE': 'EE', 'CCC': 'CC',
+        'AAD': 'AE', 'AAE': 'AE',
+        'EEA': 'EA', 'EEB': 'EA' 
+    }
+    NORMAL_TREND = { 
+        'AAA': 'AA', 'EEE': 'EE', 'CCC': 'CC',
+        'AAD': 'AE', 'AAE': 'AE', 
+        'BAE': 'AE', 'ABE': 'AE', 'BBE': 'AE',
+        'EEA': 'EA', 'EEB': 'EA', 
+        'EDA': 'EA', 'DEA': 'EA', 'DDA': 'EA'
+    }
+    WEAK_TREND = {
+        'AAA': 'AA', 'EEE': 'EE', 'CCC': 'CC',
+        'AAD': 'AE', 'AAE': 'AE', 
+        'BAE': 'AE', 'ABE': 'AE', 'BBE': 'AE', 
+        'BAD': 'AE', 'ABD': 'AE', 'BBD': 'AE',
+        'EEA': 'EA', 'EEB': 'EA', 
+        'EDA': 'EA', 'DEA': 'EA', 'DDA': 'EA', 
+        'EDB': 'EA', 'DEB': 'EA', 'DDB': 'EA'
+    }
+
 

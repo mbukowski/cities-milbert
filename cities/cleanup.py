@@ -11,9 +11,9 @@ Executes cleanup and data preparation scripts
 
 
 def main():
-    missing_data.main()
+    # missing_data.main()
     # unify.main()
-    # classify.main()
+    classify.main()
     
 
 if __name__ == '__main__':

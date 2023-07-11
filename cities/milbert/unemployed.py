@@ -5,7 +5,7 @@ import common.etl as etl
 from pandas import DataFrame
 from common.globals import Data, Units, Unify, Unemployed, Population
 from common.data_frame import filter_by_var, filter_by_id, unify
-from common.stats import basic_stats, quantile_score_ext, adjust_score, rate_gmean_stats
+from common.stats import basic_stats, quantile_score_ext, adjust_score, rate_gmean_stats, distribution_group
 from common.utils import timeit, rename
 from common.data_frame import change_types, city_type, unemp_rate
 
@@ -52,7 +52,8 @@ def prep():
     pre_loaded = False
 
     # init
-    basic_df = etl.extract(Units.BASIC_DATA, Units.HEADER, Units.TYPES)
+    # basic_df = etl.extract(Units.BASIC_DATA, Units.HEADER, Units.TYPES)
+    full_df = etl.extract(Units.FULL_DATA, Units.HEADER, Units.TYPES)
     conf_df = etl.extract(Unify.DATA, Unify.HEADER, Unify.TYPES)
 
     if pre_loaded:
@@ -73,11 +74,12 @@ def prep():
     data_df = unify(data_df, conf_df)
     etl.load(data_df, Unemployed.FIGURES + '/unemployed_unify.csv')
 
-    # leave only units from specific data source, in our case crosscheck with basic_df
-    # here we could compare values for basic and city mapping
-    id_list = basic_df['unit_id'].values.tolist()
+    # leave only units from specific data source, in our case crosscheck with full_df
+    # here we could compare values for full and city mapping
+    id_list = full_df['unit_id'].values.tolist()
     data_df = filter_by_id(data_df, id_list)
-    etl.load(data_df, Unemployed.FIGURES + '/unemployed_basic.csv')
+    # etl.load(data_df, Unemployed.FIGURES + '/unemployed_basic.csv')
+    etl.load(data_df, Unemployed.FIGURES + '/unemployed_full.csv')
 
 
 '''
@@ -90,8 +92,8 @@ We measure unemployed score based on the dividing stats to a city type bucket:
 @rename('umemployed_stats_type')
 def stats_type():
     # init
-    data_df = etl.extract(Unemployed.FIGURES + '/unemployed_basic.csv', Data.HEADER, Data.TYPES)
-    population_df = etl.extract(Population.FIGURES + '/population_raw.csv', Data.HEADER, Data.TYPES)
+    data_df = etl.extract(Unemployed.FIGURES + '/unemployed_full.csv', Data.HEADER, Data.TYPES)
+    population_df = etl.extract(Population.FIGURES + '/population_full.csv', Data.HEADER, Data.TYPES)
 
     # merge unemployed with population and set the city type
     data_df = pd.merge(data_df, population_df[['unit_id', 'year', 'val']], on=['unit_id', 'year'], suffixes=('', '_population'))
@@ -113,32 +115,35 @@ def stats_type():
 
 
 '''
-Almost the same as above with stats_type, only now we calculate a rate based on starting unemployment rate
+Almost the same as above with stats_type, only now we calculate a rate based on starting unemployment rate. 
+We do it for each year and separate data base on quintiles. We check starting distribution rate.
 '''
 @timeit
-@rename('umemployed_stats_unemp_rate')
-def stats_rate():
+@rename('umemployed_stats_distribution')
+def stats_distribution():
     # init
-    data_df = etl.extract(Unemployed.FIGURES + '/unemployed_basic.csv', Data.HEADER, Data.TYPES)
-    population_df = etl.extract(Population.FIGURES + '/population_raw.csv', Data.HEADER, Data.TYPES)
+    data_df = etl.extract(Unemployed.FIGURES + '/unemployed_full.csv', Data.HEADER, Data.TYPES)
+    population_df = etl.extract(Population.FIGURES + '/population_full.csv', Data.HEADER, Data.TYPES)
 
     # merge unemployed with population and set the unemployed rate type
     data_df = pd.merge(data_df, population_df[['unit_id', 'year', 'val']], on=['unit_id', 'year'], suffixes=('', '_population'))
     data_df.rename(columns={'val_population': 'population'}, inplace=True)
     data_df['rate'] = data_df['val'] / data_df['population']
-    data_df['type'] = data_df.apply(lambda row: unemp_rate(row['rate']), axis=1)
+    data_df = distribution_group(data_df, 'rate', 'year', 'group', Unemployed.DISTRIBUTION)
+    # group_start is neeed as we would like to know to which distribution group belonged an unemployment rate
+    data_df['group_start'] = data_df.groupby('unit_id')['group'].shift(5).fillna('')
     data_df = change_types(data_df, Unemployed.TYPES)
-    etl.load(data_df, Unemployed.FIGURES + '/unemployed_unempl_rate.csv', ff='%.16f')
+    etl.load(data_df, Unemployed.FIGURES + '/unemployed_distr_rate.csv', ff='%.16f')
 
     # Milbert - unemployed score
     stats_df = rate_gmean_stats(data_df)
     stats_df = change_types(stats_df, Unemployed.TYPES)
-    etl.load(stats_df, Unemployed.FIGURES + '/unemployed_unempl_stats.csv', ff='%.16f')
-    
-    quantile_df = quantile_score_ext(stats_df, 'gmean', 'year', 'type', reversed=True)
+    etl.load(stats_df, Unemployed.FIGURES + '/unemployed_distr_stats.csv', ff='%.16f')
+
+    quantile_df = quantile_score_ext(stats_df, 'gmean', 'year', 'group_start', reversed=True)
     quantile_df = adjust_score(quantile_df, 'gmean', 0, 0, reversed=True)
     quantile_df = change_types(quantile_df, Unemployed.TYPES)
-    etl.load(quantile_df, Unemployed.FIGURES + '/unemployed_unempl_score.csv', ff='%.16f')
+    etl.load(quantile_df, Unemployed.FIGURES + '/unemployed_distr_score.csv', ff='%.16f')
 
 
 @timeit

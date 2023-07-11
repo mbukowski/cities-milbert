@@ -101,7 +101,7 @@ def quantile_score(df, param: str, reversed=False) -> DataFrame:
 '''
 Adds quantile score to our data  based on valuse of a specific column, filtered by defined columns
 '''
-def quantile_score_ext(df, param: str, col_a: str, col_b: str, reversed=False) -> DataFrame:
+def quantile_score_ext(df: DataFrame, param: str, col_a: str, col_b: str, reversed=False) -> DataFrame:
     # we need to drop all rows where we don't have NaN values in mean, 
     # otherwise we can't calculate quantiles
     df = df.dropna().copy()
@@ -114,6 +114,27 @@ def quantile_score_ext(df, param: str, col_a: str, col_b: str, reversed=False) -
     for frame_id, frame in by_cols:
         quantiles = frame[param].quantile(QUANTILE_DISTRIBUTION).values.tolist()
         frame['score'] = frame.apply(lambda row: score(row[param], quantiles, reversed=reversed), axis=1)
+        df.update(frame)
+
+    return df
+
+'''
+Groups values for a given parameter according to a given distribution 
+and save the value in a new column with given name.
+'''
+def distribution_group(df: DataFrame, param: str, col: str, group_name: str, distribution:list[float]) -> DataFrame:
+    # we need to drop all rows where we don't have NaN values in param, 
+    # otherwise we can't calculate distribution
+    df = df.dropna().copy()
+    df.reset_index(drop=True, inplace=True)
+
+    # only then we add a new column otherwise we would have whole df empty
+    df[group_name] = np.NaN
+
+    by_col = df.groupby(col)
+    for year, frame in by_col:
+        quantiles = frame[param].quantile(distribution).values.tolist()
+        frame[group_name] = frame.apply(lambda row: group(row[param], quantiles, reversed=reversed), axis=1)
         df.update(frame)
 
     return df
@@ -141,6 +162,24 @@ def score(v: float, q: list[float], reversed=False) -> int:
     return res
 
 '''
+Very similar as above but we return char 'groups' which indicate bucket according to the distribution
+'''
+def group(v: float, q: list[float], reversed=False) -> str:
+    res = len(q)
+
+    for i in range(len(q)):
+        if v < q[i]:
+            res = i
+            break
+
+    if reversed:
+        res = len(q) - res
+
+    val = ord('A') + res
+    return chr(val)
+
+
+'''
 For most of the parameters we additionally adjust calculated scored based on specific threshold value.
 For example:
     For population parameter the rate value 0 is used as imit determined for the 4th quintile. 
@@ -164,9 +203,9 @@ def adjust_score(df: DataFrame, param: str, min_score: int, threshold: int, reve
 
     # unemployeb
     if reversed:
-        df['adj_score'] = df.apply(lambda row: min(min_score, row['score']) if(row[param] > threshold) else row['score'] , axis=1)
+        df['adj_score'] = df.apply(lambda row: min(min_score, row['score']) if(row[param] > threshold) else row['score'], axis=1)
     # eveerything else
     else:
-        df['adj_score'] = df.apply(lambda row: max(min_score, row['score']) if(row[param] > threshold) else row['score'] , axis=1)
+        df['adj_score'] = df.apply(lambda row: max(min_score, row['score']) if(row[param] > threshold) else row['score'], axis=1)
 
     return df

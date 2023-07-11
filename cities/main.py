@@ -8,6 +8,7 @@ import milbert.employment as employment
 import milbert.migration as migration
 import milbert.unemployed as unemployed
 import milbert.summary as summary
+import milbert.city as city
 
 import common.etl as etl
 from common.globals import Population, Data
@@ -46,15 +47,19 @@ def main():
 
     # # Unemployed
     # unemployed.prep()
-    # unemployed.stats_type()
-    # unemployed.stats_rate()
+    # unemployed.stats_distribution()
     
-
     # # Own Revenue
     # own_revenue.prep()
     # own_revenue.stats()
 
-    summary.default()
+    # # Summary
+    # city.size()
+    # summary.default()
+    
+    # # Various
+    # city.qgis()
+    city.trend()
     # unemployed.hist()
 
 

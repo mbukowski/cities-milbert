@@ -1,7 +1,7 @@
 import common.etl as etl
 
 from pandas import DataFrame
-from common.globals import Units, Unify
+from common.globals import Units, Unify, UnitsData
 from common.data_frame import unit_name
 
 
@@ -33,12 +33,13 @@ def load(df: DataFrame, path: str, level: int, kind: list[int]):
   
 def main():
     # extract
-    df = etl.extract(Units.DATA, Units.DATA_HEADER, Units.TYPES)
+    df = etl.extract(UnitsData.DATA, UnitsData.HEADER, UnitsData.TYPES)
 
     # transform
     df = transform(df)
 
     # load
-    load(df, Units.FULL_DATA, 6, [1, 2, 3])
-    load(df, Units.BASIC_DATA, 6, [1, 3])
-    load(df, Units.CITY_DATA, 6, [1, 4])
+    # load(df, Units.FULL_DATA, 6, [1, 2, 3])
+    # load(df, Units.BASIC_DATA, 6, [1, 3])
+    # load(df, Units.CITY_DATA, 6, [1, 4])
+    load(df, Units.COMPLETE_DATA, 6, [1, 2, 3, 4, 5])
