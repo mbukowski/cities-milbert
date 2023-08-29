@@ -25,7 +25,20 @@ We collect data statistics for 6 parameters:
 - own revenue
 '''
 
-
+'''
+TODO Configuration
+- If we have preprocessed data - to save time, but if we divide files by variable we should have no problems with time
+- Which model we would like to run: FULL, BASIC, CITY, COMPLETE in reality we switch between BASIC and COMPLETE, 
+as we only focus on municipality data.
+- How long is the period (5, 6 years etc.)
+- Specific algorithms in case we would like to implemnt them and try different things
+- Configuration for the diagrams to generate 
+- If we store data files in github what about qgis data which may be also large files? 
+They are large files above hundeds of MB, need to save them on Google Drive or some other storage provider
+- which modules to recalculate, but some of them may impact anothers and would be important to redo all of the necessary? 
+or maybe just implement apache flow for etl? but on another hand we don't deliver data on regular basis, 
+that should be theoretically one time approach
+'''
 def main():
     pd.set_option('display.max_rows', 40)
 

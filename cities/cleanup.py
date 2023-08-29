@@ -9,6 +9,9 @@ Executes cleanup and data preparation scripts
 - second we do some name modifications and we put them in separate folders divided by specific kind and level
 '''
 
+'''
+TODO filter data from whole bdl based on variables and check in to github
+'''
 
 def main():
     # missing_data.main()
