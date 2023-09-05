@@ -3,11 +3,10 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-- python=3.11
+- python=3.9
 - pyyaml
 - requests
 - pandas
 - scipy
 - matplotlib
-- geocoder
-
+- qgis

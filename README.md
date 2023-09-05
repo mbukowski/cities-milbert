@@ -18,3 +18,7 @@ Files can be either in long or short format. For convenience we suggest to use a
 - some fixes from milbert docu
 - rename main to milbert 
 - add cires module and separate file 
+
+Install ->
+Probably add conda.pth to specific location 
+changed from 3.11 to 3.9 to keep compatibility with qgis
