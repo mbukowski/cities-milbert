@@ -155,7 +155,7 @@ class Units:
     DATA = FIGURES + '/units.csv'
     BASIC_DATA = FIGURES + '/units_basic.csv'
     CITY_DATA = FIGURES + '/units_city.csv'
-    FULL_DATA = FIGURES + '/units_full.csv'
+    COMMUNE_DATA = FIGURES + '/units_commune.csv'
     COMPLETE_DATA = FIGURES + '/units_complete.csv'
     HEADER = ['unit_id', 'parent_id', 'teryt_id', 'name', 'level', 'kind']
     TYPES = {

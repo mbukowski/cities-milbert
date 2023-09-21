@@ -1,5 +1,6 @@
 # Data folders with too big files, these files need to be stored on external cloud location.
 data/bdl
+data/raw/bdl/data
 figures
 
 # Mac specific file
