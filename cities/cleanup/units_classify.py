@@ -39,7 +39,7 @@ def main():
     df = transform(df)
 
     # load
-    # load(df, Units.FULL_DATA, 6, [1, 2, 3])
+    # load(df, Units.COMMUNE_DATA, 6, [1, 2, 3])
     # load(df, Units.BASIC_DATA, 6, [1, 3])
     # load(df, Units.CITY_DATA, 6, [1, 4])
     load(df, Units.COMPLETE_DATA, 6, [1, 2, 3, 4, 5])
