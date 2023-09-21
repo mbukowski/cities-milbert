@@ -230,5 +230,3 @@ class GrowthStrategy:
         'EDA': 'EA', 'DEA': 'EA', 'DDA': 'EA', 
         'EDB': 'EA', 'DEB': 'EA', 'DDB': 'EA'
     }
-
-
