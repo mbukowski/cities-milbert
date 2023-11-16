@@ -8,7 +8,7 @@ class Data:
     }
 
 class Population:
-    DATA = './data/bdl/data_unit_population.csv'
+    DATA = './data/raw/bdl/data/data_unit_population.csv'
     FIGURES = './figures/population'
     SUBJECT_ID = 'P2137'
     VAR_ID = 72305
@@ -26,7 +26,7 @@ class Population:
     }
 
 class Migration:
-    DATA = './data/bdl/data_unit_migration.csv'
+    DATA = './data/raw/bdl/data/data_unit_migration.csv'
     FIGURES = './figures/migration'
     SUBJECT_ID = 'P1350'
     VAR_ID = 1365234
@@ -43,7 +43,7 @@ class Migration:
     }
 
 class WorkingAge:
-    DATA = './data/bdl/data_unit_working_age.csv'
+    DATA = './data/raw/bdl/data/data_unit_working_age.csv'
     FIGURES = './figures/working_age'
     SUBJECT_ID = 'P1342'
     VAR_ID = 152
@@ -61,7 +61,7 @@ class WorkingAge:
     }
 
 class Employment:
-    DATA = './data/bdl/data_unit_employment.csv'
+    DATA = './data/raw/bdl/data/data_unit_employment.csv'
     FIGURES = './figures/employment'
     SUBJECT_ID = 'P2172'
     VAR_ID = 54821
@@ -80,7 +80,7 @@ class Employment:
     }
 
 class Unemployed:
-    DATA = './data/bdl/data_unit_unemployed.csv'
+    DATA = './data/raw/bdl/data/data_unit_unemployed.csv'
     FIGURES = './figures/unemployed'
     SUBJECT_ID = 'P1944'
     VAR_ID = 10514
@@ -107,7 +107,7 @@ Total: P2621 -> 76037
 Own:   P2622 -> 76070
 '''
 class OwnRevenue:
-    DATA = './data/bdl/data_unit_own_revenue.csv'
+    DATA = './data/raw/bdl/data/data_unit_own_revenue.csv'
     FIGURES = './figures/own_revenue'
     SUBJECT_ID = 'P2622'
     VAR_ID = 76070
@@ -126,7 +126,7 @@ class OwnRevenue:
     }
 
 class Stats:
-    FIGURES = './figures/stats'
+    FIGURES = './data/processed/stats'
     # HEADER = ['unit_id', 'teryt_id', 'name', 'period_start', 'period_end', 'population_start', 'population_end', 'type', 
     #           'pop', 'migr', 'age', 'empl', 'unempl', 'revenue', 'score', 'status']
     HEADER = ['unit_id', 'teryt_id', 'name', 'level', 'kind',
@@ -151,7 +151,7 @@ class Stats:
 
 
 class Units:
-    FIGURES = './figures/units'
+    FIGURES = './data/processed/units'
     DATA = FIGURES + '/units.csv'
     BASIC_DATA = FIGURES + '/units_basic.csv'
     CITY_DATA = FIGURES + '/units_city.csv'
@@ -169,7 +169,7 @@ class Units:
 
 
 class UnitsData:
-    DATA = './data/dict/units.csv'
+    DATA = './data/raw/bdl/units.csv'
     HEADER = ['unit_id', 'parent_id', 'name', 'level', 'kind', 'has_description', 'description', 'years']
     TYPES = {
         'unit_id': str,
@@ -184,7 +184,7 @@ class UnitsData:
 
 
 class Unify:
-    DATA = './data/conf/unify.csv'
+    DATA = './data/processed/units/unify.csv'
     HEADER = ['from', 'to', 'mode', 'name', 'description', 'start_year', 'end_year']
     TYPES = {
         'from': str,
@@ -197,7 +197,7 @@ class Unify:
     }
 
 class City:
-    FIGURES = './figures/city'
+    FIGURES = './data/processed/city'
     POPULATION_DATA = FIGURES + '/city_population.csv'
     RURAL = { 'id': 'R', 'name': 'rural' }
     SMALL = { 'id': 'S', 'name': 'small', 'min_size': 0, 'max_size': 20000 }

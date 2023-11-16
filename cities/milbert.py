@@ -66,13 +66,13 @@ def main():
     # own_revenue.prep()
     # own_revenue.stats()
 
-    # # Summary
-    # city.size()
-    # summary.default()
+    # Summary
+    city.size()
+    summary.default()
     
     # # Various
     # city.qgis()
-    city.trend()
+    # city.trend()
     # unemployed.hist()
 
 

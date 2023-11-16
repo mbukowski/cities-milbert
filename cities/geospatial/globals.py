@@ -4,13 +4,14 @@ from qgis.core import *
 from qgis.analysis import *
 from PyQt5.QtCore import *
 
+# pct_threshold: 0% thin, 2% base, 5% thick
 class Config:
     QGS_SYS_CONF = './config/qgis_win_sys_paths.csv'
     QGS_ENV_CONF = './config/qgis_win_env.json'
     LINE_UP = '\033[1A'
     LINE_CLEAR = '\x1b[2K'
-    PCT_THRESHOLD = 2
-    START_STEP = 9
+    PCT_THRESHOLD = 0
+    START_STEP = 10
     TEST_MODE = False
     TEST_FEATUER_COUNT = 9999
     TEST_CLC_YEAR = '2006'

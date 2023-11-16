@@ -181,6 +181,20 @@ def prepare_baseline(input_layer, output_layer, attributes=[]):
     expression = QgsExpression(query)
     request = QgsFeatureRequest(expression)
     selected_features = [feature for feature in input_vl.getFeatures(request)]
+
+    # # take the largest piece
+    # feature_size = {}
+    # for feature in input_vl.getFeatures(request):
+    #     teryt_id = feature[Attributes.TERYT_ID.name()]
+
+    #     if teryt_id not in feature_size:
+    #         feature_size[teryt_id] = feature
+
+    #     if feature[Attributes.PCT.name()] > feature_size[teryt_id][Attributes.PCT.name()]:
+    #         feature_size[teryt_id] = feature
+
+    # selected_features = list(feature_size.values())
+
     with edit(vl):
         vl.addFeatures(selected_features)
 

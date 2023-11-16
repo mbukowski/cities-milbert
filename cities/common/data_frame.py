@@ -184,7 +184,33 @@ def unify(data_df: DataFrame, conf_df: DataFrame) -> DataFrame:
     data_df.loc[df.index, 'val'] = df['val']
     data_df.reset_index(drop=True, inplace=True)
 
-    # # remove
+    # remove
+    id_list = conf_df.loc[conf_df['mode'] == 9]['from'].values.tolist()    
+    data_df = data_df.loc[~data_df['unit_id'].isin(id_list)].copy()
+
+    data_df.sort_values(['unit_id', 'year'], inplace=True)
+    data_df.reset_index(drop=True, inplace=True)
+
+    return data_df
+
+'''
+unifies only unit id based on provided configuration
+data_df must have 'year' and 'unit_id' columns
+'''
+def unify_unit_id(data_df: DataFrame, conf_df: DataFrame) -> DataFrame:
+    # replace - narrow a df to a smaller piece and operate on it
+    id_list = conf_df.loc[conf_df['mode'] == 1]['from'].values.tolist()
+    df = filter_by_id(data_df, id_list)
+
+    # replace 
+    df['unit_id'] = df.apply(lambda row: replace(row['unit_id'], conf_df), axis=1)
+    data_df.loc[df.index, 'unit_id'] = df['unit_id']
+    data_df.reset_index(drop=True, inplace=True)
+
+    # merge
+    # we don't have to merge as target value was present at any time
+
+    # remove
     id_list = conf_df.loc[conf_df['mode'] == 9]['from'].values.tolist()    
     data_df = data_df.loc[~data_df['unit_id'].isin(id_list)].copy()
 

@@ -6,10 +6,16 @@ import re
 import csv
 import math
 
+from pathlib import Path
+
 from common.utils import *
 from geospatial.common import *
 from geospatial.globals import *
 from geospatial.methods import *
+
+import common.etl as etl
+from common.globals import Unify
+from common.data_frame import unify_unit_id
 
 paths = pd.read_csv(Config.QGS_SYS_CONF).paths.tolist()
 sys.path += paths
@@ -44,6 +50,8 @@ def main():
     adm_boundaries_gpkg = build_gpkg(QGS.LAYERS_FOLDER, adm_boundaries_folder, 'administrative_boundaries.gpkg')
     adm_country_layer = build_layer(adm_boundaries_gpkg, 'country')
     adm_commune_layer = build_layer(adm_boundaries_gpkg, 'commune')
+
+    qgis_output = './data/processed/qgis'
 
     # # step 0: test functions
     # if Config.TEST_MODE & (Config.START_STEP <= 0): 
@@ -256,15 +264,43 @@ def main():
                 fields = list(entry.keys())
                 result_list = [value for value in result_dict.values()]
                 
-                with open(f'./data/processed/qgis/compactness_{year}_{group}.csv', 'w', newline='') as file: 
+                with open(f'{qgis_output}/compactness_{year}_{group}.csv', 'w', newline='') as file: 
                     writer = csv.DictWriter(file, fieldnames = fields)
                     writer.writeheader()
                     writer.writerows(result_list)
 
-    # combine to df / merge with names per teryt_id
-    # to compactness.csv
-
     qgs.exitQgis()
+
+    # combine to df / merge with names per teryt_id
+    # to compactness.csv - separate function
+
+    header_types = {
+        'unit_id': str,
+        'teryt_id': str
+    }
+
+    path = Path(qgis_output, 'compactness.csv')
+    if path.exists(): path.unlink()
+
+    input_files = []
+    for f in os.listdir(qgis_output):
+        if re.search(r'^compactness.*\.csv', f):
+            input_files.append(f'{os.path.abspath(qgis_output)}/{f}')
+
+    df1 = pd.read_csv('./data/processed/units/units_commune.csv', sep=',', decimal='.', dtype=header_types)
+    df2 = pd.concat((pd.read_csv(f, sep=',', decimal='.', dtype=header_types) for f in input_files), ignore_index=True)
+    df = pd.merge(df1[['unit_id', 'teryt_id', 'name']], df2, how='right', left_on=['teryt_id'], right_on=['teryt_id'])
+    
+    # first we need to unify our results to data we have in statistics and apply a teryt_id
+    # TODO - teryt should be a separate function !!!    
+    conf_df = etl.extract(Unify.DATA, Unify.HEADER, Unify.TYPES)
+    df = unify_unit_id(df, conf_df)
+    df['teryt_id'] = df['unit_id'].str[2:4] + df['unit_id'].str[7:12]
+
+    df.to_csv(path.resolve(), float_format='%.6f', index=False)
+
+    # correlations
+    # stats df -> teryt_id, period_end [year, year + 5] -> [2006, 2011] type (SMLR) -> (SML) -> (M), score
 
 
 if __name__ == '__main__':

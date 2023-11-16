@@ -9,3 +9,5 @@ dependencies:
 - pandas
 - scipy
 - matplotlib
+- seaborn
+- scikit-learn
