@@ -1,10 +1,12 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import statsmodels.api as sm
 
 from sklearn import metrics
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from scipy import stats
 
 def main():
     # density()
@@ -218,11 +220,24 @@ def regression():
         y_pred_test = model.predict(X_test) # predicted value of y_test
         y_pred_train = model.predict(X_train) # predicted value of y_train
 
+        print(year)
         # Evaluate the model
         print('Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred_test))
         print('Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred_test))
         print('Root Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred_test, squared=False))
+        print()
 
+
+        X2 = sm.add_constant(X)
+        est = sm.OLS(y, X2)
+        est2 = est.fit()
+        print(est2.summary())
+        print()
+        print(f'p-value: {est2.pvalues.loc["convex_hull"]}')
+
+        print('*****')
+
+        # print(est2.pvalues.loc['convex_hull'])
 
         # # Visualize the results (optional)
         # plt.scatter(X_test['density'], y_test, color='black', label='Actual')
@@ -255,8 +270,8 @@ def regression():
         plt.show()
 
         # Regressor coefficients and intercept
-        print(f'Coefficient: {model.coef_}')
-        print(f'Intercept: {model.intercept_}')
+        # print(f'Coefficient: {model.coef_}')
+        # print(f'Intercept: {model.intercept_}')
 
         # plt.show()
 
