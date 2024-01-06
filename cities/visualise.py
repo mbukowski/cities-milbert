@@ -1,166 +1,18 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import statsmodels.api as sm
 
 from sklearn import metrics
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from scipy import stats
 
 def main():
-    score()
     # density()
     # compactness()
     # correlation()
-    # regression()
-
-# boxplots for scores and city types
-def score():
-    # font = {'family': 'normal',
-    #         'fontname': 'Calibri',
-    #         'size': 22}
-
-    # plt.rc('font', **font)
-
-    header_types = {
-        'unit_id': str,
-        'teryt_id': str
-    }
-
-    df = pd.read_csv('./data/processed/stats/summary.csv', sep=',', decimal='.', dtype=header_types)
-    df = df.loc[(df['type'].isin(['S', 'M', 'L']))]
-    df = df.loc[(df['period_start'].isin([2006, 2011, 2016]))]
-    df = df.groupby(['period_start', 'type', 'score', 'status']).size().reset_index(name='counts')
-
-    df.loc[df["type"] == "L", "type"] = 'large'
-    df.loc[df["type"] == "M", "type"] = 'medium'
-    df.loc[df["type"] == "S", "type"] = 'small'
-
-
-    types_colors={"large": "#f6b26b", "medium": "#6d9eeb", "small":"#c27ba0",  "R":"#c11be4"}
-
-    # # Iterate over periods
-    # for i, period in enumerate(df['period_start'].unique()):
-    #     subset = df[df['period_start'] == period]
-    #     sns.boxplot(data=subset[['type','score']].sort_values(by='type'), x='type', y='score', palette=types_colors)
-    
-    #     axes[i].set_title(f'{period}-{period + 5}', fontsize=20)
-    #     axes[i].set_xlabel('City Size', fontsize=20)
-    #     axes[i].set_ylabel('Score', fontsize=20)
-    #     axes[i].tick_params(axis='both', which='major', labelsize=16)
-
-    # # if save:
-    # #     plt.savefig(path+str(period_start)+"-"+str(period_start+5)+'.png')
-
-    # plt.show()
-
-
-
-    # print(df.to_string())
-
-    # Plotting
-    sns.set(style="whitegrid")
-    fig, axes = plt.subplots(1, 3, figsize=(15, 5))
-    
-    # Iterate over periods
-    for i, period in enumerate(df['period_start'].unique()):
-        subset = df[df['period_start'] == period]
-        # sns.boxplot(data=subset, x='type', y='score', ax=axes[i], showfliers=True, flierprops=dict(markerfacecolor='r', marker='D'), palette=types_colors)
-        sns.boxplot(data=subset, x='type', y='score', ax=axes[i], palette=types_colors)
-        
-        axes[i].set_title(f'{period}-{period + 5}', fontsize=18, fontname='Calibri')
-        axes[i].set_xlabel('')
-        axes[i].set_ylabel('')
-
-        # Set score ticks every 5 units
-        axes[i].set_yticks(range(0, 25, 5))
-    
-
-        # Remove horizontal lines
-        axes[i].xaxis.grid(False)
-        axes[i].yaxis.grid(False)
-
-        axes[i].tick_params(axis='both', which='major', labelsize=14)
-
-        # Remove legend
-        # axes[i].legend().set_visible(False)
-
-        # plt.xlabel("X Label")
-        # plt.ylabel("Y Label")
-
-
-    # Set common labels and show the plot
-    # fig.text(0.5, 0.01, 'City Size', ha='center', fontsize=24, fontname='Calibri')
-    fig.text(0.06, 0.5, 'Score', va='center', rotation='vertical', fontsize=24, fontname='Calibri')
-
-    # plt.tick_params(axis='both', which='major', labelsize=16)
-
-    # plt.show()
-    plt.savefig('C:\\Users\\mbukowski\Desktop\\fig_6_box_plots_scores_300.png', dpi=300)
-
-    # # Convert period_start to categorical for correct ordering
-    # df['period_start'] = pd.Categorical(df['period_start'], categories=[2006, 2011, 2016], ordered=True)
-
-    # # Create subplots for each period
-    # periods = df['period_start'].cat.categories
-    # num_periods = len(periods)
-
-    # fig, axes = plt.subplots(1, num_periods, figsize=(15, 5), sharey=True)
-    # sns.set_theme(style="whitegrid")
-
-    # for i, period in enumerate(periods):
-    #     data_subset = df[df['period_start'] == period]
-    #     agg_df = data_subset.groupby(['type', 'score'], as_index=False)['counts'].sum()
-
-    #     # Create the box plot for the current period
-    #     sns.boxplot(x='type', y='counts', hue='type', data=agg_df, width=0.8, showfliers=False, ax=axes[i])
-    #     axes[i].set_title(f'Period {period}')
-    #     axes[i].set_xlabel('Type')
-    #     axes[i].set_ylabel('Counts')
-    #     axes[i].legend(title='Type', bbox_to_anchor=(1.05, 1), loc='upper left')
-    #     axes[i].get_legend().remove()
-
-    #     # Add labels at the bottom
-    #     axes[i].text(0.5, -0.2, 'large', ha='center', va='center', transform=axes[i].transAxes, fontdict={'fontname': 'Calibri'})
-    #     axes[i].text(1.5, -0.2, 'medium', ha='center', va='center', transform=axes[i].transAxes, fontdict={'fontname': 'Calibri'})
-    #     axes[i].text(2.5, -0.2, 'small', ha='center', va='center', transform=axes[i].transAxes, fontdict={'fontname': 'Calibri'})
-
-
-    # plt.suptitle('Box Plots for Each Type in Each Period')
-    # plt.tight_layout(rect=[0, 0, 1, 0.95])
-    # plt.show()    
-
-    # # Aggregate counts for each score within each type and period
-    # agg_df = df.groupby(['period_start', 'type', 'score'], as_index=False)['counts'].sum()
-
-    # # Create the side-by-side box plots
-    # plt.figure(figsize=(15, 5))
-    # sns.set_theme(style="whitegrid")
-
-    # sns.boxplot(x='period_start', y='counts', hue='type', data=agg_df, width=0.8, showfliers=False)
-    # plt.title('Box Plot for Each Type in Each Period')
-    # plt.xlabel('Period Start')
-    # plt.ylabel('Counts')
-    # plt.legend(title='Type', bbox_to_anchor=(1.05, 1), loc='upper left')
-
-    # plt.tight_layout()
-    # plt.show()
-
-    # # Create the side-by-side box plots
-    # plt.figure(figsize=(15, 5))
-    # sns.set_theme(style="whitegrid")
-
-    # for i, period in enumerate(df['period_start'].unique()):
-    #     plt.subplot(1, 3, i+1)
-    #     subset = df[df['period_start'] == period]
-    #     sns.boxplot(x='type', y='counts', hue='score', data=subset, width=0.8, showfliers=False)
-    #     plt.title(f'Period {period}')
-    #     plt.xlabel('Type')
-    #     plt.ylabel('Counts')
-    #     plt.legend(title='Score', bbox_to_anchor=(1.05, 1), loc='upper left')
-
-    # plt.tight_layout()
-    # plt.show()
-
+    regression()
 
 def density():
     header_types = {
@@ -368,12 +220,24 @@ def regression():
         y_pred_test = model.predict(X_test) # predicted value of y_test
         y_pred_train = model.predict(X_train) # predicted value of y_train
 
+        print(year)
         # Evaluate the model
         print('Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred_test))
         print('Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred_test))
         print('Root Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred_test, squared=False))
-        # print(model_fit.summary())
+        print()
 
+
+        X2 = sm.add_constant(X)
+        est = sm.OLS(y, X2)
+        est2 = est.fit()
+        print(est2.summary())
+        print()
+        print(f'p-value: {est2.pvalues.loc["convex_hull"]}')
+
+        print('*****')
+
+        # print(est2.pvalues.loc['convex_hull'])
 
         # # Visualize the results (optional)
         # plt.scatter(X_test['density'], y_test, color='black', label='Actual')
@@ -406,8 +270,8 @@ def regression():
         plt.show()
 
         # Regressor coefficients and intercept
-        print(f'Coefficient: {model.coef_}')
-        print(f'Intercept: {model.intercept_}')
+        # print(f'Coefficient: {model.coef_}')
+        # print(f'Intercept: {model.intercept_}')
 
         # plt.show()
 

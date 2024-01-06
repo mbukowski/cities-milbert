@@ -3,7 +3,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-- python=3.9
+- python=3.11
 - pyyaml
 - requests
 - pandas
@@ -11,3 +11,4 @@ dependencies:
 - matplotlib
 - seaborn
 - scikit-learn
+- statsmodels
